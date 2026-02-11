@@ -77,7 +77,7 @@
         
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
+            font-size: clamp(14px, 1.6vw, 16px);
         }
 
         body {
@@ -101,7 +101,7 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 0 clamp(1rem, 5%, 3rem);
         }
 
         .section {
@@ -114,7 +114,7 @@
         }
 
         /* =============================================
-           CUSTOM CURSOR
+           ENHANCED CUSTOM CURSOR
         ============================================= */
         
         .cursor {
@@ -125,29 +125,37 @@
         }
 
         .cursor-dot {
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
             background: var(--primary-cyan);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.8), 0 0 40px rgba(0, 243, 255, 0.4);
+            transition: transform 0.2s ease-out;
         }
 
         .cursor-ring {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--primary-cyan);
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--primary-cyan);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            transition: all 0.3s;
-            opacity: 0.6;
+            transition: all 0.3s ease-out;
+            opacity: 0.7;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+        }
+
+        body.cursor-hover .cursor-dot {
+            transform: translate(-50%, -50%) scale(1.5);
         }
 
         body.cursor-hover .cursor-ring {
-            width: 60px;
-            height: 60px;
+            width: 72px;
+            height: 72px;
             border-color: var(--matrix-green);
             opacity: 1;
+            border-width: 4px;
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
         }
 
         @media (pointer: coarse) {
@@ -303,7 +311,7 @@
         .header-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 0 clamp(1rem, 5%, 3rem);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -360,7 +368,7 @@
 
         .logo-text {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
             font-weight: 900;
             letter-spacing: 0.1em;
             background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
@@ -394,7 +402,7 @@
         .nav-link {
             position: relative;
             font-family: var(--font-display);
-            font-size: 0.875rem;
+            font-size: clamp(0.8rem, 1vw, 0.875rem);
             font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -433,7 +441,7 @@
             border: 2px solid var(--primary-cyan);
             color: var(--primary-cyan);
             font-family: var(--font-display);
-            font-size: 0.875rem;
+            font-size: clamp(0.8rem, 1vw, 0.875rem);
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -493,7 +501,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: calc(80px + var(--space-8)) 5% var(--space-8);
+            padding: calc(80px + var(--space-8)) clamp(1rem, 5%, 3rem) var(--space-8);
             position: relative;
         }
 
@@ -542,7 +550,7 @@
 
         .hero-title {
             font-family: var(--font-display);
-            font-size: 58px;
+            font-size: clamp(40px, 8vw, 58px);
             font-weight: 900;
             line-height: 1.1;
             letter-spacing: 0.02em;
@@ -600,7 +608,7 @@
         .hero-subtitle {
             max-width: 700px;
             margin: 0 auto var(--space-6);
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             line-height: 1.8;
             color: var(--text-dim);
         }
@@ -900,7 +908,7 @@
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 4vw, 3rem);
             color: var(--primary-cyan);
             margin-bottom: var(--space-4);
             filter: drop-shadow(0 0 20px rgba(0, 243, 255, 0.6));
@@ -913,7 +921,7 @@
 
         .service-title {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 2vw, 1.5rem);
             font-weight: 700;
             letter-spacing: 0.05em;
             color: var(--text-white);
@@ -921,10 +929,32 @@
         }
 
         .service-description {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
             line-height: 1.8;
             color: var(--text-dim);
             margin-bottom: var(--space-4);
+        }
+
+        .service-subservices {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-subservices li {
+            margin-bottom: var(--space-2);
+            font-size: clamp(0.85rem, 1.2vw, 0.9rem);
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-subservices li::before {
+            content: '\f058'; /* Font Awesome check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-cyan);
         }
 
         .service-badge {
@@ -947,7 +977,7 @@
         
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--space-8);
             align-items: center;
             max-width: 1400px;
@@ -956,14 +986,14 @@
 
         .about-text h2 {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             font-weight: 900;
             color: var(--text-white);
             margin-bottom: var(--space-4);
         }
 
         .about-text p {
-            font-size: 1.125rem;
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
             line-height: 1.8;
             color: var(--text-dim);
             margin-bottom: var(--space-4);
@@ -971,7 +1001,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: var(--space-4);
             margin-top: var(--space-6);
         }
@@ -986,17 +1016,177 @@
 
         .stat-number {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             font-weight: 900;
             color: var(--primary-cyan);
             margin-bottom: var(--space-2);
         }
 
         .stat-label {
-            font-size: 0.875rem;
+            font-size: clamp(0.8rem, 1vw, 0.875rem);
             color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 0.1em;
+        }
+
+        /* =============================================
+           TEAM SECTION
+        ============================================= */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            padding: var(--space-6);
+            background: rgba(15, 20, 35, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl), var(--shadow-glow-cyan);
+        }
+
+        .team-member img {
+            width: clamp(120px, 20vw, 150px);
+            height: clamp(120px, 20vw, 150px);
+            border-radius: 50%;
+            margin-bottom: var(--space-3);
+            border: 2px solid var(--primary-cyan);
+            transition: transform var(--transition-base);
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2vw, 1.5rem);
+            color: var(--text-white);
+            margin-bottom: var(--space-2);
+        }
+
+        .team-role {
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            color: var(--text-dim);
+        }
+
+        /* =============================================
+           PORTFOLIO SECTION
+        ============================================= */
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            padding: var(--space-6);
+            background: rgba(15, 20, 35, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            border-color: rgba(0, 243, 255, 0.3);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl), var(--shadow-glow-cyan);
+        }
+
+        .portfolio-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2vw, 1.5rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: var(--space-3);
+        }
+
+        .portfolio-description {
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            line-height: 1.8;
+            color: var(--text-dim);
+        }
+
+        /* =============================================
+           SIDE NAVIGATION BAR (Vertical Bar for Page Navigation)
+        ============================================= */
+
+        .side-nav {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(0, 243, 255, 0.3);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: var(--space-4) 0;
+            gap: var(--space-4);
+            transition: width 0.4s ease;
+        }
+
+        .side-nav:hover {
+            width: 200px;
+        }
+
+        .side-nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            transition: color var(--transition-base);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            padding: 0 var(--space-3);
+        }
+
+        .side-nav-link i {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        .side-nav-link span {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .side-nav:hover .side-nav-link span {
+            opacity: 1;
+        }
+
+        .side-nav-link:hover,
+        .side-nav-link.active {
+            color: var(--primary-cyan);
+        }
+
+        @media (max-width: 1024px) {
+            .side-nav {
+                display: none;
+            }
         }
 
         /* =============================================
@@ -1055,7 +1245,7 @@
         }
 
         .contact-subtitle {
-            font-size: 1.125rem;
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
             color: var(--text-dim);
         }
 
@@ -1170,7 +1360,7 @@
         }
 
         /* =============================================
-           FOOTER
+           FOOTER WITH SOCIAL MEDIA
         ============================================= */
         
         .footer {
@@ -1182,7 +1372,7 @@
 
         .footer-logo {
             font-family: var(--font-display);
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: 900;
             letter-spacing: 0.1em;
             color: var(--text-white);
@@ -1215,8 +1405,27 @@
             animation: blink 2s infinite;
         }
 
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+
+        .social-link {
+            color: var(--text-gray);
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            transition: all var(--transition-base);
+        }
+
+        .social-link:hover {
+            color: var(--primary-cyan);
+            transform: scale(1.2);
+            box-shadow: var(--shadow-glow-cyan);
+        }
+
         .footer-text {
-            font-size: 0.875rem;
+            font-size: clamp(0.8rem, 1vw, 0.875rem);
             color: var(--text-dim);
         }
 
@@ -1269,7 +1478,7 @@
         }
 
         .modal-icon {
-            font-size: 4rem;
+            font-size: clamp(3rem, 6vw, 4rem);
             color: var(--primary-cyan);
             margin-bottom: var(--space-5);
             animation: modalPulse 1.5s infinite;
@@ -1282,7 +1491,7 @@
 
         .modal-title {
             font-family: var(--font-display);
-            font-size: 1.75rem;
+            font-size: clamp(1.5rem, 3vw, 1.75rem);
             font-weight: 700;
             letter-spacing: 0.1em;
             color: var(--text-white);
@@ -1291,7 +1500,7 @@
         }
 
         .modal-text {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
             line-height: 1.6;
             color: var(--text-dim);
             margin-bottom: var(--space-5);
@@ -1442,6 +1651,8 @@
                     <li><a href="#home" class="nav-link active" data-en="HOME" data-ar="الرئيسية">HOME</a></li>
                     <li><a href="#services" class="nav-link" data-en="SERVICES" data-ar="الخدمات">SERVICES</a></li>
                     <li><a href="#about" class="nav-link" data-en="ABOUT" data-ar="عن">ABOUT</a></li>
+                    <li><a href="#team" class="nav-link" data-en="TEAM" data-ar="الفريق">TEAM</a></li>
+                    <li><a href="#portfolio" class="nav-link" data-en="PORTFOLIO" data-ar="الأعمال">PORTFOLIO</a></li>
                     <li><a href="#contact" class="nav-link" data-en="CONTACT" data-ar="اتصل">CONTACT</a></li>
                 </ul>
                 <button class="lang-btn" id="langBtn" data-en="AR" data-ar="EN">AR</button>
@@ -1454,6 +1665,34 @@
             </button>
         </div>
     </header>
+
+    <!-- Side Navigation Bar (Vertical Bar for Navigation) -->
+    <nav class="side-nav">
+        <a href="#home" class="side-nav-link active">
+            <i class="fas fa-home"></i>
+            <span data-en="Home" data-ar="الرئيسية">Home</span>
+        </a>
+        <a href="#services" class="side-nav-link">
+            <i class="fas fa-cogs"></i>
+            <span data-en="Services" data-ar="الخدمات">Services</span>
+        </a>
+        <a href="#about" class="side-nav-link">
+            <i class="fas fa-info-circle"></i>
+            <span data-en="About" data-ar="عن">About</span>
+        </a>
+        <a href="#team" class="side-nav-link">
+            <i class="fas fa-users"></i>
+            <span data-en="Team" data-ar="الفريق">Team</span>
+        </a>
+        <a href="#portfolio" class="side-nav-link">
+            <i class="fas fa-briefcase"></i>
+            <span data-en="Portfolio" data-ar="الأعمال">Portfolio</span>
+        </a>
+        <a href="#contact" class="side-nav-link">
+            <i class="fas fa-envelope"></i>
+            <span data-en="Contact" data-ar="اتصل">Contact</span>
+        </a>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1555,13 +1794,22 @@
                 <div class="service-card">
                     <i class="fas fa-shield-halved service-icon"></i>
                     <h3 class="service-title">
-                        <span data-en="Quantum Cybersecurity" data-ar="الأمن السيبراني الكمي">Quantum Cybersecurity</span>
+                        <span data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</span>
                     </h3>
                     <p class="service-description">
                         <span data-en="Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture for critical infrastructure protection." data-ar="تشفير مقاوم للكم من الجيل التالي، واستخبارات التهديدات المتقدمة، وهندسة أمنية شاملة لحماية البنية التحتية الحيوية.">
                             Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture for critical infrastructure protection.
                         </span>
                     </p>
+                    <ul class="service-subservices">
+                        <li>Quantum-resistant encryption</li>
+                        <li>Advanced threat intelligence</li>
+                        <li>Security architecture</li>
+                        <li>Critical infrastructure protection</li>
+                        <li>24/7 monitoring</li>
+                        <li>Incident response</li>
+                        <li>Vulnerability assessment</li>
+                    </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
 
@@ -1576,6 +1824,15 @@
                             Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation and data-driven decision making.
                         </span>
                     </p>
+                    <ul class="service-subservices">
+                        <li>Machine learning models</li>
+                        <li>Neural networks</li>
+                        <li>Predictive analytics</li>
+                        <li>Intelligent automation</li>
+                        <li>Data-driven decisions</li>
+                        <li>AI integration</li>
+                        <li>Custom AI solutions</li>
+                    </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
 
@@ -1590,6 +1847,15 @@
                             Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture for enterprise-grade performance.
                         </span>
                     </p>
+                    <ul class="service-subservices">
+                        <li>Cloud-native apps</li>
+                        <li>React and Node.js</li>
+                        <li>Microservices</li>
+                        <li>Enterprise performance</li>
+                        <li>Scalable solutions</li>
+                        <li>API development</li>
+                        <li>Database optimization</li>
+                    </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
 
@@ -1604,6 +1870,15 @@
                             Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI and accelerate business growth.
                         </span>
                     </p>
+                    <ul class="service-subservices">
+                        <li>Data-driven strategies</li>
+                        <li>SEO optimization</li>
+                        <li>AI-powered campaigns</li>
+                        <li>Maximize ROI</li>
+                        <li>Business growth</li>
+                        <li>Social media ads</li>
+                        <li>Content creation</li>
+                    </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
 
@@ -1618,6 +1893,15 @@
                             Professional content creation, cinematic production, motion graphics, and immersive media experiences powered by cutting-edge technology.
                         </span>
                     </p>
+                    <ul class="service-subservices">
+                        <li>Content creation</li>
+                        <li>Cinematic production</li>
+                        <li>Motion graphics</li>
+                        <li>Immersive media</li>
+                        <li>Cutting-edge tech</li>
+                        <li>Video editing</li>
+                        <li>VR experiences</li>
+                    </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
 
@@ -1632,6 +1916,15 @@
                             Interactive learning platforms, professional certifications, and comprehensive training programs in cybersecurity, AI, and emerging technologies.
                         </span>
                     </p>
+                    <ul class="service-subservices">
+                        <li>Interactive platforms</li>
+                        <li>Professional certifications</li>
+                        <li>Training programs</li>
+                        <li>Cybersecurity education</li>
+                        <li>AI training</li>
+                        <li>Emerging tech courses</li>
+                        <li>Online learning</li>
+                    </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
             </div>
@@ -1676,6 +1969,78 @@
                         <div class="stat-label" data-en="Support Available" data-ar="دعم متاح">Support Available</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-en="OUR TEAM" data-ar="فريقنا">OUR TEAM</span>
+                <h2 class="section-title">
+                    <span data-en="MEET THE FOUNDERS" data-ar="تعرف على المؤسسين">MEET THE FOUNDERS</span>
+                </h2>
+                <p class="section-description">
+                    <span data-en="Our company is founded by two dedicated experts committed to excellence in technology." data-ar="شركتنا مؤسسة من قبل اثنين من الخبراء الملتزمين بالتميز في التكنولوجيا.">
+                        Our company is founded by two dedicated experts committed to excellence in technology.
+                    </span>
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Owner 1 -->
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Matta Gerges">
+                    <h3 class="team-name">Matta Gerges</h3>
+                    <p class="team-role">Co-Founder & CEO</p>
+                </div>
+
+                <!-- Owner 2 -->
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Friend Name">
+                    <h3 class="team-name">Friend Name</h3>
+                    <p class="team-role">Co-Founder & CTO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-en="OUR WORKS" data-ar="أعمالنا">OUR WORKS</span>
+                <h2 class="section-title">
+                    <span data-en="ACCOMPLISHED PROJECTS" data-ar="المشروعات المنجزة">ACCOMPLISHED PROJECTS</span>
+                </h2>
+                <p class="section-description">
+                    <span data-en="A showcase of our successful projects demonstrating our expertise and innovation." data-ar="عرض لمشاريعنا الناجحة التي تظهر خبرتنا والابتكار.">
+                        A showcase of our successful projects demonstrating our expertise and innovation.
+                    </span>
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <h3 class="portfolio-title">Project Alpha</h3>
+                    <p class="portfolio-description">A comprehensive cybersecurity solution for a major enterprise, including quantum-resistant encryption and real-time threat monitoring.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <h3 class="portfolio-title">Project Beta</h3>
+                    <p class="portfolio-description">AI-powered predictive analytics platform for retail industry, improving sales forecasting by 40%.</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <h3 class="portfolio-title">Project Gamma</h3>
+                    <p class="portfolio-description">Full-stack web application for e-commerce, built with React and Node.js, handling 100k+ users daily.</p>
+                </div>
+
+                <!-- Add more projects as needed -->
             </div>
         </div>
     </section>
@@ -1748,6 +2113,13 @@
             <span class="status-dot"></span>
             <span data-en="ALL SYSTEMS OPERATIONAL" data-ar="جميع الأنظمة تعمل">ALL SYSTEMS OPERATIONAL</span>
         </div>
+        <div class="social-media">
+            <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
         <p class="footer-text">
             <span data-en="© 2024 HexMind Solutions. Vision 2030 Strategic Partner. All Rights Reserved." data-ar="© 2024 هيكس مايند سوليوشنز. شريك استراتيجي رؤية 2030. جميع الحقوق محفوظة.">
                 © 2024 HexMind Solutions. Vision 2030 Strategic Partner. All Rights Reserved.
@@ -1813,6 +2185,7 @@
             cursorDot: document.querySelector('.cursor-dot'),
             cursorRing: document.querySelector('.cursor-ring'),
             navLinks: document.querySelectorAll('.nav-link'),
+            sideNavLinks: document.querySelectorAll('.side-nav-link'),
             serviceCards: document.querySelectorAll('.service-card')
         };
 
@@ -1842,7 +2215,7 @@
         }
 
         // =============================================
-        // CUSTOM CURSOR
+        // ENHANCED CURSOR
         // =============================================
 
         function initCursor() {
@@ -2057,8 +2430,14 @@
                             block: 'start'
                         });
 
+                        // Update active class for header nav
                         DOM.navLinks.forEach(link => link.classList.remove('active'));
                         this.classList.add('active');
+
+                        // Update active class for side nav
+                        DOM.sideNavLinks.forEach(link => link.classList.remove('active'));
+                        const sideLink = [...DOM.sideNavLinks].find(l => l.href === this.href);
+                        if (sideLink) sideLink.classList.add('active');
                     }
                 });
             });
