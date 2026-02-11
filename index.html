@@ -7,9 +7,8 @@
     <meta name="keywords" content="cybersecurity, AI, digital transformation, Vision 2030, Saudi Arabia, software development">
     <meta name="author" content="HexMind Solutions">
     <meta name="theme-color" content="#00f3ff">
-    
-    <title>HexMind Solutions | Digital Transformation & Cybersecurity Excellence</title>
-    
+    <title>HexMind Solutions</title>
+    <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimsq2vjv_p4zbn-7H_QemMua8EYBk5UfC6RidmQssWOgTkAMVyKBeTnsPOCdORh1i70Uqp45w0eb0HKQHPUOOgz-nf5Y7BQ41mDSwPfp4MEGStIebLs8Uy2dQjmnLAto2Ik3L6dsWNq-NDjfBmmPgcsV7jOhAZYYOn5NqqBt-59-w5kNRUY_GoM_DMOwjj/s1600/logo.png" type="image/x-icon">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +20,7 @@
 
     <style>
         /* =============================================
-           PROFESSIONAL CSS ARCHITECTURE - PRODUCTION READY
+           CORE VARIABLES & RESET
         ============================================= */
         
         :root {
@@ -86,31 +85,113 @@
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: none;
-        }
-
-        body.rtl {
-            direction: rtl;
-            font-family: var(--font-arabic);
         }
 
         /* =============================================
-           UTILITIES
+           LANGUAGE SWITCHING - NO LAYOUT SHIFT
         ============================================= */
         
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 5%, 3rem);
+        body.rtl {
+            font-family: var(--font-arabic);
+        }
+        
+        /* Keep LTR layout always - no direction change */
+        html, body, .header-content, .nav, .hero-container, 
+        .container, .contact-wrapper, .footer,
+        .service-card, .service-subservices li,
+        .form-group, .form-label, .nav-list,
+        .side-nav, .info-panel {
+            direction: ltr !important;
+            text-align: left !important;
+        }
+        
+        /* Only text alignment changes for RTL */
+        body.rtl .hero-title,
+        body.rtl .section-title,
+        body.rtl .service-title,
+        body.rtl .contact-title,
+        body.rtl .footer-logo,
+        body.rtl .section-description,
+        body.rtl .hero-subtitle,
+        body.rtl .service-description,
+        body.rtl .team-bio,
+        body.rtl .about-text,
+        body.rtl .modal-title,
+        body.rtl .modal-text {
+            text-align: center !important;
+        }
+        
+        body.rtl .service-subservices li {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        
+        body.rtl .service-subservices li::before {
+            left: auto;
+            right: 0;
+            transform: none;
+        }
+        
+        body.rtl .form-label {
+            left: auto;
+            right: 1.25rem;
+        }
+        
+        body.rtl .form-input:focus ~ .form-label,
+        body.rtl .form-input:not(:placeholder-shown) ~ .form-label,
+        body.rtl .form-textarea:focus ~ .form-label,
+        body.rtl .form-textarea:not(:placeholder-shown) ~ .form-label {
+            left: auto;
+            right: 1rem;
+        }
+        
+        body.rtl .side-nav {
+            left: 0;
+            right: auto;
+            border-right: 1px solid rgba(0, 243, 255, 0.3);
+            border-left: none;
+        }
+        
+        body.rtl .info-panel.left {
+            left: 5%;
+            right: auto;
+        }
+        
+        body.rtl .info-panel.right {
+            right: 5%;
+            left: auto;
+        }
+        
+        body.rtl .mobile-nav-close {
+            right: auto;
+            left: 20px;
         }
 
-        .section {
-            padding: var(--space-12) 0;
-            position: relative;
+        /* =============================================
+           CUSTOM SCROLLBAR
+        ============================================= */
+        
+        ::-webkit-scrollbar {
+            width: 10px;
         }
 
-        .hidden {
-            display: none !important;
+        ::-webkit-scrollbar-track {
+            background: var(--bg-darker); 
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary-cyan), var(--primary-purple));
+            border-radius: 5px;
+            border: 2px solid var(--bg-darker);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-cyan);
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-cyan) var(--bg-darker);
         }
 
         /* =============================================
@@ -285,7 +366,7 @@
         }
 
         /* =============================================
-           HEADER - ALWAYS CENTERED
+           HEADER
         ============================================= */
         
         .header {
@@ -317,7 +398,6 @@
             align-items: center;
         }
 
-        /* Logo with SVG Animation */
         .logo {
             display: flex;
             align-items: center;
@@ -385,7 +465,6 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* Navigation - Always Centered */
         .nav {
             display: flex;
             align-items: center;
@@ -434,7 +513,6 @@
             width: 100%;
         }
 
-        /* Language Toggle */
         .lang-btn {
             padding: var(--space-2) var(--space-4);
             background: transparent;
@@ -473,7 +551,6 @@
             left: 0;
         }
 
-        /* Mobile Menu */
         .mobile-toggle {
             display: none;
             flex-direction: column;
@@ -490,6 +567,91 @@
             background: var(--primary-cyan);
             border-radius: 2px;
             transition: all var(--transition-base);
+        }
+
+        /* Mobile Nav Close Button - Hidden on Desktop */
+        .mobile-nav-close {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--primary-cyan);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1002;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav-close:hover {
+            color: var(--primary-pink);
+        }
+
+        /* =============================================
+           SIDE NAVIGATION BAR
+        ============================================= */
+
+        .side-nav {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(0, 243, 255, 0.3);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: var(--space-4) 0;
+            gap: var(--space-4);
+            transition: width 0.4s ease;
+        }
+
+        .side-nav:hover {
+            width: 200px;
+        }
+
+        .side-nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            transition: color var(--transition-base);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            padding: 0 var(--space-3);
+        }
+
+        .side-nav-link i {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        .side-nav-link span {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .side-nav:hover .side-nav-link span {
+            opacity: 1;
+        }
+
+        .side-nav-link:hover,
+        .side-nav-link.active {
+            color: var(--primary-cyan);
+        }
+
+        @media (max-width: 1024px) {
+            .side-nav {
+                display: none;
+            }
         }
 
         /* =============================================
@@ -512,22 +674,26 @@
         }
 
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-3);
-            padding: var(--space-2) var(--space-4);
-            background: rgba(0, 243, 255, 0.05);
-            border: 1px solid var(--primary-cyan);
-            border-radius: 50px;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            color: var(--primary-cyan);
-            text-transform: uppercase;
-            margin-bottom: var(--space-5);
-            animation: badgeGlow 3s infinite;
-        }
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid var(--primary-cyan);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--primary-cyan);
+    text-transform: uppercase;
+    margin-bottom: var(--space-5);
+    animation: badgeGlow 3s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
 
         @keyframes badgeGlow {
             0%, 100% { box-shadow: 0 0 20px rgba(0, 243, 255, 0.2); }
@@ -596,7 +762,6 @@
             75% { clip: rect(90px, 9999px, 120px, 0); }
             100% { clip: rect(40px, 9999px, 60px, 0); }
         }
-
         @keyframes glitch2 {
             0% { clip: rect(85px, 9999px, 140px, 0); }
             25% { clip: rect(60px, 9999px, 90px, 0); }
@@ -611,6 +776,7 @@
             font-size: clamp(1rem, 2vw, 1.25rem);
             line-height: 1.8;
             color: var(--text-dim);
+            text-align: center;
         }
 
         .hero-cta {
@@ -632,11 +798,13 @@
             transition: all var(--transition-base);
             position: relative;
             overflow: hidden;
+            display: inline-block;
+            border: 2px solid transparent;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: transparent;
-            border: 2px solid var(--primary-cyan);
+            border-color: var(--primary-cyan);
             color: var(--text-white);
         }
 
@@ -663,9 +831,9 @@
         }
 
         .btn-secondary {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
             color: var(--text-white);
+            background: transparent;
         }
 
         .btn-secondary:hover {
@@ -674,52 +842,6 @@
             transform: translateY(-3px);
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: var(--space-6);
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-3);
-            transition: opacity var(--transition-base);
-        }
-
-        .scroll-indicator.hidden {
-            opacity: 0;
-        }
-
-        .scroll-text {
-            font-family: var(--font-mono);
-            font-size: 0.625rem;
-            letter-spacing: 0.2em;
-            color: var(--primary-cyan);
-            text-transform: uppercase;
-        }
-
-        .scroll-mouse {
-            width: 30px;
-            height: 50px;
-            border: 2px solid var(--primary-cyan);
-            border-radius: 20px;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-        }
-
-        .scroll-mouse::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            width: 6px;
-            height: 6px;
-            background: var(--primary-cyan);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            animation: scrollDot 2s infinite;
-            box-shadow: 0 0 10px var(--primary-cyan);
-        }
 
         @keyframes scrollDot {
             0% { top: 10px; opacity: 1; }
@@ -801,10 +923,27 @@
             color: var(--primary-cyan);
         }
 
+        @media (max-width: 1200px) {
+            .info-panel {
+                display: none;
+            }
+        }
+
         /* =============================================
            SECTIONS STYLING
         ============================================= */
         
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 5%, 3rem);
+        }
+
+        .section {
+            padding: var(--space-12) 0;
+            position: relative;
+        }
+
         .section-header {
             max-width: 800px;
             margin: 0 auto var(--space-8);
@@ -835,12 +974,14 @@
             text-transform: uppercase;
             color: var(--text-white);
             margin-bottom: var(--space-4);
+            text-align: center;
         }
 
         .section-description {
             font-size: 1.125rem;
             line-height: 1.8;
             color: var(--text-dim);
+            text-align: center;
         }
 
         /* Services Grid */
@@ -852,6 +993,7 @@
             margin: 0 auto;
         }
 
+        /* Service Card Style */
         .service-card {
             position: relative;
             padding: var(--space-6);
@@ -861,6 +1003,7 @@
             overflow: hidden;
             transition: all var(--transition-base);
             cursor: pointer;
+            text-align: left;
         }
 
         .service-card::before {
@@ -937,7 +1080,8 @@
 
         .service-subservices {
             list-style-type: none;
-            padding-left: 0;
+            padding: 0;
+            margin-bottom: var(--space-4);
         }
 
         .service-subservices li {
@@ -949,7 +1093,7 @@
         }
 
         .service-subservices li::before {
-            content: '\f058'; /* Font Awesome check icon */
+            content: '\f058';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
@@ -972,15 +1116,110 @@
         }
 
         /* =============================================
+           MEET THE FOUNDERS - FROM INDEX3.HTML
+        ============================================= */
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(15,20,35,0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .team-member:hover {
+            border-color: rgba(0,243,255,0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,243,255,0.4);
+        }
+
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(0,243,255,0.4);
+        }
+
+        .team-name {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--primary-cyan);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .team-bio {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0,243,255,0.1);
+            border: 1px solid var(--primary-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-cyan);
+            font-size: 1.25rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-cyan);
+            color: #000;
+            box-shadow: 0 0 20px var(--primary-cyan);
+        }
+
+        @media (max-width: 968px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =============================================
            ABOUT SECTION
         ============================================= */
         
         .about-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-8);
-            align-items: center;
-            max-width: 1400px;
+            text-align: center;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -999,194 +1238,15 @@
             margin-bottom: var(--space-4);
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--space-4);
-            margin-top: var(--space-6);
-        }
-
-        .stat-item {
-            padding: var(--space-4);
-            background: rgba(0, 243, 255, 0.05);
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 900;
-            color: var(--primary-cyan);
-            margin-bottom: var(--space-2);
-        }
-
-        .stat-label {
-            font-size: clamp(0.8rem, 1vw, 0.875rem);
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* =============================================
-           TEAM SECTION
-        ============================================= */
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-5);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .team-member {
-            padding: var(--space-6);
-            background: rgba(15, 20, 35, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            text-align: center;
-            transition: all var(--transition-base);
-        }
-
-        .team-member:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl), var(--shadow-glow-cyan);
-        }
-
-        .team-member img {
-            width: clamp(120px, 20vw, 150px);
-            height: clamp(120px, 20vw, 150px);
-            border-radius: 50%;
-            margin-bottom: var(--space-3);
-            border: 2px solid var(--primary-cyan);
-            transition: transform var(--transition-base);
-        }
-
-        .team-member:hover img {
-            transform: scale(1.1);
-        }
-
-        .team-name {
-            font-family: var(--font-display);
-            font-size: clamp(1.3rem, 2vw, 1.5rem);
-            color: var(--text-white);
-            margin-bottom: var(--space-2);
-        }
-
-        .team-role {
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
-            color: var(--text-dim);
-        }
-
         /* =============================================
            PORTFOLIO SECTION
         ============================================= */
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-5);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .portfolio-item {
-            position: relative;
-            padding: var(--space-6);
-            background: rgba(15, 20, 35, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all var(--transition-base);
-            cursor: pointer;
-        }
-
-        .portfolio-item:hover {
-            border-color: rgba(0, 243, 255, 0.3);
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl), var(--shadow-glow-cyan);
-        }
-
-        .portfolio-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.3rem, 2vw, 1.5rem);
-            font-weight: 700;
-            color: var(--text-white);
-            margin-bottom: var(--space-3);
-        }
-
-        .portfolio-description {
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
-            line-height: 1.8;
-            color: var(--text-dim);
-        }
-
-        /* =============================================
-           SIDE NAVIGATION BAR (Vertical Bar for Page Navigation)
-        ============================================= */
-
-        .side-nav {
-            position: fixed;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 60px;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(20px);
-            border-right: 1px solid rgba(0, 243, 255, 0.3);
-            z-index: 999;
+        
+        .portfolio-tags {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--space-4) 0;
-            gap: var(--space-4);
-            transition: width 0.4s ease;
-        }
-
-        .side-nav:hover {
-            width: 200px;
-        }
-
-        .side-nav-link {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            color: var(--text-gray);
-            text-decoration: none;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            transition: color var(--transition-base);
-            white-space: nowrap;
-            overflow: hidden;
-            width: 100%;
-            padding: 0 var(--space-3);
-        }
-
-        .side-nav-link i {
-            font-size: 1.2rem;
-            min-width: 24px;
-        }
-
-        .side-nav-link span {
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .side-nav:hover .side-nav-link span {
-            opacity: 1;
-        }
-
-        .side-nav-link:hover,
-        .side-nav-link.active {
-            color: var(--primary-cyan);
-        }
-
-        @media (max-width: 1024px) {
-            .side-nav {
-                display: none;
-            }
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
         /* =============================================
@@ -1360,14 +1420,15 @@
         }
 
         /* =============================================
-           FOOTER WITH SOCIAL MEDIA
+           FOOTER
         ============================================= */
         
         .footer {
-            padding: var(--space-8) 0 var(--space-5);
+            padding: var(--space-12) 0 var(--space-5);
             background: var(--bg-black);
             border-top: 1px solid rgba(0, 243, 255, 0.2);
             text-align: center;
+            position: relative;
         }
 
         .footer-logo {
@@ -1376,7 +1437,22 @@
             font-weight: 900;
             letter-spacing: 0.1em;
             color: var(--text-white);
-            margin-bottom: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+        
+        .footer-description {
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto var(--space-8);
+        }
+
+        .footer-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-5);
+            max-width: 1400px;
+            margin: 0 auto var(--space-8);
         }
 
         .footer-status {
@@ -1393,7 +1469,7 @@
             letter-spacing: 0.1em;
             color: var(--matrix-green);
             text-transform: uppercase;
-            margin-bottom: var(--space-5);
+            margin-bottom: var(--space-8);
         }
 
         .footer-status .status-dot {
@@ -1405,28 +1481,10 @@
             animation: blink 2s infinite;
         }
 
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-4);
-            margin-bottom: var(--space-4);
-        }
-
-        .social-link {
-            color: var(--text-gray);
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
-            transition: all var(--transition-base);
-        }
-
-        .social-link:hover {
-            color: var(--primary-cyan);
-            transform: scale(1.2);
-            box-shadow: var(--shadow-glow-cyan);
-        }
-
         .footer-text {
             font-size: clamp(0.8rem, 1vw, 0.875rem);
             color: var(--text-dim);
+            margin-top: var(--space-8);
         }
 
         /* =============================================
@@ -1531,19 +1589,13 @@
            RESPONSIVE DESIGN
         ============================================= */
         
-        @media (max-width: 1200px) {
-            .info-panel {
-                display: none;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
         @media (max-width: 968px) {
             .mobile-toggle {
                 display: flex;
+            }
+
+            .mobile-nav-close {
+                display: block;
             }
 
             .nav {
@@ -1557,8 +1609,9 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: var(--space-5);
-                transition: left var(--transition-smooth);
+                transition: left 0.4s ease-in-out;
                 z-index: 999;
+                padding-top: 60px;
             }
 
             .nav.active {
@@ -1585,10 +1638,6 @@
             .contact-wrapper {
                 padding: var(--space-6) var(--space-5);
             }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 600px) {
@@ -1603,6 +1652,19 @@
 
             .logo-text {
                 font-size: 1.25rem;
+            }
+            
+            .footer-services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            
+            .team-member {
+                padding: 2rem;
             }
         }
     </style>
@@ -1635,18 +1697,20 @@
     <!-- Header -->
     <header class="header" id="header">
         <div class="header-content">
-            <a href="#home" class="logo">
+            <div class="logo" style="pointer-events: none;">
                 <div class="logo-icon">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <polygon class="hex-shape" points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5"/>
-                        <polygon class="hex-core" points="50,20 75,35 75,65 50,80 25,65 25,35"/>
-                        <circle cx="50" cy="50" r="8" fill="#00f3ff"/>
-                    </svg>
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimsq2vjv_p4zbn-7H_QemMua8EYBk5UfC6RidmQssWOgTkAMVyKBeTnsPOCdORh1i70Uqp45w0eb0HKQHPUOOgz-nf5Y7BQ41mDSwPfp4MEGStIebLs8Uy2dQjmnLAto2Ik3L6dsWNq-NDjfBmmPgcsV7jOhAZYYOn5NqqBt-59-w5kNRUY_GoM_DMOwjj/s1600/logo.png" 
+                         alt="HexMind Solutions" 
+                         style="width: 50px; height: 50px; object-fit: contain; pointer-events: none;">
                 </div>
-                <span class="logo-text">HEXMIND SOLUTIONS</span>
-            </a>
+                <span class="logo-text" data-en="HEXMIND SOLUTIONS" data-ar="هيكس مايند سوليوشنز" style="pointer-events: none;">HEXMIND SOLUTIONS</span>
+            </div>
 
             <nav class="nav" id="nav">
+                <button class="mobile-nav-close" id="mobileNavClose">
+                    <i class="fas fa-times"></i>
+                </button>
+
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link active" data-en="HOME" data-ar="الرئيسية">HOME</a></li>
                     <li><a href="#services" class="nav-link" data-en="SERVICES" data-ar="الخدمات">SERVICES</a></li>
@@ -1666,7 +1730,7 @@
         </div>
     </header>
 
-    <!-- Side Navigation Bar (Vertical Bar for Navigation) -->
+    <!-- Side Navigation Bar -->
     <nav class="side-nav">
         <a href="#home" class="side-nav-link active">
             <i class="fas fa-home"></i>
@@ -1766,12 +1830,6 @@
                 </li>
             </ul>
         </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator" id="scrollIndicator">
-            <span class="scroll-text" data-en="SCROLL DOWN" data-ar="تمرير">SCROLL DOWN</span>
-            <div class="scroll-mouse"></div>
-        </div>
     </section>
 
     <!-- Services Section -->
@@ -1797,18 +1855,18 @@
                         <span data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</span>
                     </h3>
                     <p class="service-description">
-                        <span data-en="Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture for critical infrastructure protection." data-ar="تشفير مقاوم للكم من الجيل التالي، واستخبارات التهديدات المتقدمة، وهندسة أمنية شاملة لحماية البنية التحتية الحيوية.">
-                            Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture for critical infrastructure protection.
+                        <span data-en="Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture." data-ar="تشفير مقاوم للكم من الجيل التالي، واستخبارات التهديدات المتقدمة، وهندسة أمنية شاملة.">
+                            Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture.
                         </span>
                     </p>
                     <ul class="service-subservices">
-                        <li>Quantum-resistant encryption</li>
-                        <li>Advanced threat intelligence</li>
-                        <li>Security architecture</li>
-                        <li>Critical infrastructure protection</li>
-                        <li>24/7 monitoring</li>
-                        <li>Incident response</li>
-                        <li>Vulnerability assessment</li>
+                        <li data-en="Quantum-resistant encryption" data-ar="تشفير مقاوم للكم">Quantum-resistant encryption</li>
+                        <li data-en="Advanced threat intelligence" data-ar="استخبارات التهديدات المتقدمة">Advanced threat intelligence</li>
+                        <li data-en="Security architecture" data-ar="هندسة أمنية">Security architecture</li>
+                        <li data-en="Critical infrastructure protection" data-ar="حماية البنية التحتية">Critical infrastructure protection</li>
+                        <li data-en="24/7 monitoring" data-ar="مراقبة على مدار الساعة">24/7 monitoring</li>
+                        <li data-en="Incident response" data-ar="الاستجابة للحوادث">Incident response</li>
+                        <li data-en="Vulnerability assessment" data-ar="تقييم الثغرات">Vulnerability assessment</li>
                     </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
@@ -1820,18 +1878,18 @@
                         <span data-en="Artificial Intelligence" data-ar="الذكاء الاصطناعي">Artificial Intelligence</span>
                     </h3>
                     <p class="service-description">
-                        <span data-en="Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation and data-driven decision making." data-ar="نماذج التعلم الآلي المتقدمة، والشبكات العصبية، وأنظمة التحليلات التنبؤية للأتمتة الذكية واتخاذ القرارات المستندة إلى البيانات.">
-                            Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation and data-driven decision making.
+                        <span data-en="Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation." data-ar="نماذج التعلم الآلي المتقدمة، والشبكات العصبية، وأنظمة التحليلات التنبؤية للأتمتة الذكية.">
+                            Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation.
                         </span>
                     </p>
                     <ul class="service-subservices">
-                        <li>Machine learning models</li>
-                        <li>Neural networks</li>
-                        <li>Predictive analytics</li>
-                        <li>Intelligent automation</li>
-                        <li>Data-driven decisions</li>
-                        <li>AI integration</li>
-                        <li>Custom AI solutions</li>
+                        <li data-en="Machine learning models" data-ar="نماذج التعلم الآلي">Machine learning models</li>
+                        <li data-en="Neural networks" data-ar="الشبكات العصبية">Neural networks</li>
+                        <li data-en="Predictive analytics" data-ar="التحليلات التنبؤية">Predictive analytics</li>
+                        <li data-en="Intelligent automation" data-ar="الأتمتة الذكية">Intelligent automation</li>
+                        <li data-en="Data-driven decisions" data-ar="قرارات تعتمد على البيانات">Data-driven decisions</li>
+                        <li data-en="AI integration" data-ar="دمج الذكاء الاصطناعي">AI integration</li>
+                        <li data-en="Custom AI solutions" data-ar="حلول ذكاء اصطناعي مخصصة">Custom AI solutions</li>
                     </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
@@ -1843,18 +1901,18 @@
                         <span data-en="Full Stack Development" data-ar="التطوير الشامل">Full Stack Development</span>
                     </h3>
                     <p class="service-description">
-                        <span data-en="Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture for enterprise-grade performance." data-ar="تطبيقات سحابية قابلة للتوسع مبنية بأطر عمل حديثة بما في ذلك React و Node.js وهندسة الخدمات الصغيرة لأداء على مستوى المؤسسات.">
-                            Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture for enterprise-grade performance.
+                        <span data-en="Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture." data-ar="تطبيقات سحابية قابلة للتوسع مبنية بأطر عمل حديثة مثل React و Node.js.">
+                            Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture.
                         </span>
                     </p>
                     <ul class="service-subservices">
-                        <li>Cloud-native apps</li>
-                        <li>React and Node.js</li>
-                        <li>Microservices</li>
-                        <li>Enterprise performance</li>
-                        <li>Scalable solutions</li>
-                        <li>API development</li>
-                        <li>Database optimization</li>
+                        <li data-en="React & Node.js" data-ar="React و Node.js">React & Node.js</li>
+                        <li data-en="Microservices" data-ar="الخدمات المصغرة">Microservices</li>
+                        <li data-en="Cloud-native apps" data-ar="تطبيقات سحابية">Cloud-native apps</li>
+                        <li data-en="Enterprise performance" data-ar="أداء مؤسسي">Enterprise performance</li>
+                        <li data-en="Scalable solutions" data-ar="حلول قابلة للتوسع">Scalable solutions</li>
+                        <li data-en="API development" data-ar="تطوير API">API development</li>
+                        <li data-en="Database optimization" data-ar="تحسين قواعد البيانات">Database optimization</li>
                     </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
@@ -1866,18 +1924,18 @@
                         <span data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</span>
                     </h3>
                     <p class="service-description">
-                        <span data-en="Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI and accelerate business growth." data-ar="استراتيجيات تسويق مدفوعة بالبيانات، وتحسين محركات البحث، وحملات مدعومة بالذكاء الاصطناعي مصممة لتعظيم العائد على الاستثمار وتسريع نمو الأعمال.">
-                            Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI and accelerate business growth.
+                        <span data-en="Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI." data-ar="استراتيجيات تسويق مدفوعة بالبيانات، وتحسين محركات البحث، وحملات ذكية.">
+                            Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI.
                         </span>
                     </p>
                     <ul class="service-subservices">
-                        <li>Data-driven strategies</li>
-                        <li>SEO optimization</li>
-                        <li>AI-powered campaigns</li>
-                        <li>Maximize ROI</li>
-                        <li>Business growth</li>
-                        <li>Social media ads</li>
-                        <li>Content creation</li>
+                        <li data-en="Data-driven strategies" data-ar="استراتيجيات تعتمد على البيانات">Data-driven strategies</li>
+                        <li data-en="SEO optimization" data-ar="تحسين محركات البحث">SEO optimization</li>
+                        <li data-en="AI-powered campaigns" data-ar="حملات مدعومة بالذكاء الاصطناعي">AI-powered campaigns</li>
+                        <li data-en="Maximize ROI" data-ar="تعظيم العائد على الاستثمار">Maximize ROI</li>
+                        <li data-en="Business growth" data-ar="نمو الأعمال">Business growth</li>
+                        <li data-en="Social media ads" data-ar="إعلانات وسائل التواصل">Social media ads</li>
+                        <li data-en="Content creation" data-ar="إنشاء المحتوى">Content creation</li>
                     </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
@@ -1889,18 +1947,18 @@
                         <span data-en="Media Production" data-ar="الإنتاج الإعلامي">Media Production</span>
                     </h3>
                     <p class="service-description">
-                        <span data-en="Professional content creation, cinematic production, motion graphics, and immersive media experiences powered by cutting-edge technology." data-ar="إنشاء محتوى احترافي، وإنتاج سينمائي، ورسوم متحركة، وتجارب وسائط غامرة مدعومة بأحدث التقنيات.">
-                            Professional content creation, cinematic production, motion graphics, and immersive media experiences powered by cutting-edge technology.
+                        <span data-en="Professional content creation, cinematic production, motion graphics, and immersive media experiences." data-ar="إنشاء محتوى احترافي، وإنتاج سينمائي، ورسوم متحركة.">
+                            Professional content creation, cinematic production, motion graphics, and immersive media experiences.
                         </span>
                     </p>
                     <ul class="service-subservices">
-                        <li>Content creation</li>
-                        <li>Cinematic production</li>
-                        <li>Motion graphics</li>
-                        <li>Immersive media</li>
-                        <li>Cutting-edge tech</li>
-                        <li>Video editing</li>
-                        <li>VR experiences</li>
+                        <li data-en="Cinematic production" data-ar="إنتاج سينمائي">Cinematic production</li>
+                        <li data-en="Motion graphics" data-ar="رسوم متحركة">Motion graphics</li>
+                        <li data-en="Video editing" data-ar="مونتاج فيديو">Video editing</li>
+                        <li data-en="VR experiences" data-ar="تجارب الواقع الافتراضي">VR experiences</li>
+                        <li data-en="Cutting-edge tech" data-ar="تقنيات متطورة">Cutting-edge tech</li>
+                        <li data-en="Content creation" data-ar="إنشاء المحتوى">Content creation</li>
+                        <li data-en="Immersive media" data-ar="وسائط غامرة">Immersive media</li>
                     </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
@@ -1912,18 +1970,18 @@
                         <span data-en="Technology Education" data-ar="التعليم التقني">Technology Education</span>
                     </h3>
                     <p class="service-description">
-                        <span data-en="Interactive learning platforms, professional certifications, and comprehensive training programs in cybersecurity, AI, and emerging technologies." data-ar="منصات تعليمية تفاعلية، وشهادات مهنية، وبرامج تدريبية شاملة في الأمن السيبراني والذكاء الاصطناعي والتقنيات الناشئة.">
-                            Interactive learning platforms, professional certifications, and comprehensive training programs in cybersecurity, AI, and emerging technologies.
+                        <span data-en="Interactive learning platforms, professional certifications, and comprehensive training programs." data-ar="منصات تعليمية تفاعلية، وشهادات مهنية، وبرامج تدريبية شاملة.">
+                            Interactive learning platforms, professional certifications, and comprehensive training programs.
                         </span>
                     </p>
                     <ul class="service-subservices">
-                        <li>Interactive platforms</li>
-                        <li>Professional certifications</li>
-                        <li>Training programs</li>
-                        <li>Cybersecurity education</li>
-                        <li>AI training</li>
-                        <li>Emerging tech courses</li>
-                        <li>Online learning</li>
+                        <li data-en="Interactive platforms" data-ar="منصات تفاعلية">Interactive platforms</li>
+                        <li data-en="Professional certifications" data-ar="شهادات مهنية">Professional certifications</li>
+                        <li data-en="Training programs" data-ar="برامج تدريبية">Training programs</li>
+                        <li data-en="Cybersecurity education" data-ar="تعليم الأمن السيبراني">Cybersecurity education</li>
+                        <li data-en="AI training" data-ar="تدريب الذكاء الاصطناعي">AI training</li>
+                        <li data-en="Emerging tech courses" data-ar="دورات التقنيات الناشئة">Emerging tech courses</li>
+                        <li data-en="Online learning" data-ar="التعلم عبر الإنترنت">Online learning</li>
                     </ul>
                     <span class="service-badge">VISION 2030</span>
                 </div>
@@ -1950,25 +2008,6 @@
                         </span>
                     </p>
                 </div>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label" data-en="Projects Completed" data-ar="مشروع مكتمل">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">99%</div>
-                        <div class="stat-label" data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label" data-en="Expert Team" data-ar="فريق خبراء">Expert Team</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label" data-en="Support Available" data-ar="دعم متاح">Support Available</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1977,30 +2016,48 @@
     <section class="section" id="team">
         <div class="container">
             <div class="section-header">
-                <span class="section-label" data-en="OUR TEAM" data-ar="فريقنا">OUR TEAM</span>
+                <span class="section-label" data-en="OUR FOUNDERS" data-ar="المؤسسون">OUR FOUNDERS</span>
                 <h2 class="section-title">
-                    <span data-en="MEET THE FOUNDERS" data-ar="تعرف على المؤسسين">MEET THE FOUNDERS</span>
+                    <span data-en="MEET THE TEAM" data-ar="تعرف على الفريق">MEET THE TEAM</span>
                 </h2>
                 <p class="section-description">
-                    <span data-en="Our company is founded by two dedicated experts committed to excellence in technology." data-ar="شركتنا مؤسسة من قبل اثنين من الخبراء الملتزمين بالتميز في التكنولوجيا.">
-                        Our company is founded by two dedicated experts committed to excellence in technology.
+                    <span data-en="The visionary minds behind HexMind Solutions, driving innovation and excellence." data-ar="العقول الرؤيوية وراء هيكس مايند سوليوشنز، تقود الابتكار والتميز.">
+                        The visionary minds behind HexMind Solutions, driving innovation and excellence.
                     </span>
                 </p>
             </div>
 
             <div class="team-grid">
-                <!-- Owner 1 -->
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Matta Gerges">
-                    <h3 class="team-name">Matta Gerges</h3>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="team-name">Ahmed Al-Rashid</h3>
                     <p class="team-role">Co-Founder & CEO</p>
+                    <p class="team-bio" data-en="Cybersecurity expert and AI specialist with 10+ years of experience in digital transformation. Leading HexMind's strategic vision aligned with Saudi Vision 2030 to build secure, intelligent systems for the future." data-ar="خبير في الأمن السيبراني والذكاء الاصطناعي مع أكثر من 10 سنوات من الخبرة في التحول الرقمي. يقود الرؤية الاستراتيجية لهيكس مايند سوليوشنز بما يتماشى مع رؤية السعودية 2030 لبناء أنظمة آمنة وذكية للمستقبل.">
+                        Cybersecurity expert and AI specialist with 10+ years of experience in digital transformation. Leading HexMind's strategic vision aligned with Saudi Vision 2030 to build secure, intelligent systems for the future.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
 
-                <!-- Owner 2 -->
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Friend Name">
-                    <h3 class="team-name">Friend Name</h3>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="team-name">Mohammed Al-Fahad</h3>
                     <p class="team-role">Co-Founder & CTO</p>
+                    <p class="team-bio" data-en="Full-stack developer and technology innovator specializing in scalable web applications. Expert in React, Node.js, and modern frameworks, committed to delivering world-class digital solutions." data-ar="مطور متكامل ومبتكر تقني متخصص في تطبيقات الويب القابلة للتوسع. خبير في React و Node.js والأطر الحديثة، ملتزم بتقديم حلول رقمية عالمية المستوى.">
+                        Full-stack developer and technology innovator specializing in scalable web applications. Expert in React, Node.js, and modern frameworks, committed to delivering world-class digital solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2010,37 +2067,56 @@
     <section class="section" id="portfolio">
         <div class="container">
             <div class="section-header">
-                <span class="section-label" data-en="OUR WORKS" data-ar="أعمالنا">OUR WORKS</span>
+                <span class="section-label" data-en="OUR WORK" data-ar="أعمالنا">OUR WORK</span>
                 <h2 class="section-title">
-                    <span data-en="ACCOMPLISHED PROJECTS" data-ar="المشروعات المنجزة">ACCOMPLISHED PROJECTS</span>
+                    <span data-en="COMPLETED PROJECTS" data-ar="المشروعات المنجزة">COMPLETED PROJECTS</span>
                 </h2>
                 <p class="section-description">
-                    <span data-en="A showcase of our successful projects demonstrating our expertise and innovation." data-ar="عرض لمشاريعنا الناجحة التي تظهر خبرتنا والابتكار.">
-                        A showcase of our successful projects demonstrating our expertise and innovation.
+                    <span data-en="Showcasing our successful projects and innovative solutions delivered to clients worldwide." data-ar="عرض مشاريعنا الناجحة والحلول المبتكرة المقدمة للعملاء في جميع أنحاء العالم.">
+                        Showcasing our successful projects and innovative solutions delivered to clients worldwide.
                     </span>
                 </p>
             </div>
 
-            <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <div class="portfolio-item">
-                    <h3 class="portfolio-title">Project Alpha</h3>
-                    <p class="portfolio-description">A comprehensive cybersecurity solution for a major enterprise, including quantum-resistant encryption and real-time threat monitoring.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-building service-icon"></i>
+                    <h3 class="service-title">Enterprise Security Platform</h3>
+                    <p class="service-description" data-en="Comprehensive cybersecurity solution for a major financial institution including penetration testing, security audits, and 24/7 threat monitoring with AI-powered detection." data-ar="حل أمن سيبراني شامل لمؤسسة مالية كبرى يشمل اختبار الاختراق والتدقيق الأمني ومراقبة التهديدات على مدار الساعة مع كشف مدعوم بالذكاء الاصطناعي.">
+                        Comprehensive cybersecurity solution for a major financial institution including penetration testing, security audits, and 24/7 threat monitoring with AI-powered detection.
+                    </p>
+                    <div class="portfolio-tags">
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">Cybersecurity</span>
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">AI</span>
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">Network Security</span>
+                    </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="portfolio-item">
-                    <h3 class="portfolio-title">Project Beta</h3>
-                    <p class="portfolio-description">AI-powered predictive analytics platform for retail industry, improving sales forecasting by 40%.</p>
+                <div class="service-card">
+                    <i class="fas fa-brain service-icon"></i>
+                    <h3 class="service-title">AI-Powered Analytics System</h3>
+                    <p class="service-description" data-en="Machine learning platform for predictive analytics and business intelligence, processing millions of data points daily with real-time insights and automated reporting." data-ar="منصة تعلم آلي للتحليلات التنبؤية وذكاء الأعمال، تعالج ملايين نقاط البيانات يومياً مع رؤى فورية وتقارير آلية.">
+                        Machine learning platform for predictive analytics and business intelligence, processing millions of data points daily with real-time insights and automated reporting.
+                    </p>
+                    <div class="portfolio-tags">
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">Machine Learning</span>
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">Python</span>
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">Data Science</span>
+                    </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="portfolio-item">
-                    <h3 class="portfolio-title">Project Gamma</h3>
-                    <p class="portfolio-description">Full-stack web application for e-commerce, built with React and Node.js, handling 100k+ users daily.</p>
+                <div class="service-card">
+                    <i class="fas fa-shopping-cart service-icon"></i>
+                    <h3 class="service-title">E-Commerce Platform</h3>
+                    <p class="service-description" data-en="Full-stack e-commerce solution with real-time inventory management, payment gateway integration, and mobile apps for iOS and Android reaching 100K+ users." data-ar="حل تجارة إلكترونية متكامل مع إدارة المخزون في الوقت الفعلي، ودمج بوابات الدفع، وتطبيقات جوال لنظامي iOS و Android تصل إلى أكثر من 100 ألف مستخدم.">
+                        Full-stack e-commerce solution with real-time inventory management, payment gateway integration, and mobile apps for iOS and Android reaching 100K+ users.
+                    </p>
+                    <div class="portfolio-tags">
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">React</span>
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">Node.js</span>
+                        <span class="service-badge" style="border-color: var(--primary-cyan);">Mobile</span>
+                    </div>
                 </div>
-
-                <!-- Add more projects as needed -->
             </div>
         </div>
     </section>
@@ -2109,17 +2185,59 @@
         <div class="footer-logo">
             <span data-en="HEXMIND SOLUTIONS" data-ar="هيكس مايند سوليوشنز">HEXMIND SOLUTIONS</span>
         </div>
+        
+        <p class="footer-description">
+            <span data-en="Empowering your business with next-gen technology solutions tailored for the future." data-ar="تمكين عملك بحلول تقنية من الجيل القادم مصممة للمستقبل.">
+                Empowering your business with next-gen technology solutions tailored for the future.
+            </span>
+        </p>
+
         <div class="footer-status">
             <span class="status-dot"></span>
             <span data-en="ALL SYSTEMS OPERATIONAL" data-ar="جميع الأنظمة تعمل">ALL SYSTEMS OPERATIONAL</span>
         </div>
-        <div class="social-media">
-            <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+
+        <div class="footer-services-grid">
+            <a href="#services" class="service-card">
+                <i class="fas fa-shield-halved service-icon"></i>
+                <h3 class="service-title">
+                    <span data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</span>
+                </h3>
+                <p class="service-description">
+                    <span data-en="Protect your digital assets with our quantum-resistant encryption." data-ar="احمي أصولك الرقمية بتشفيرنا المقاوم للكم.">
+                        Protect your digital assets with our quantum-resistant encryption.
+                    </span>
+                </p>
+                <span class="service-badge">SECURE</span>
+            </a>
+
+            <a href="#services" class="service-card">
+                <i class="fas fa-brain service-icon"></i>
+                <h3 class="service-title">
+                    <span data-en="Artificial Intelligence" data-ar="الذكاء الاصطناعي">Artificial Intelligence</span>
+                </h3>
+                <p class="service-description">
+                    <span data-en="Leverage AI for data-driven decisions and growth." data-ar="استغل الذكاء الاصطناعي لاتخاذ قرارات تعتمد على البيانات والنمو.">
+                        Leverage AI for data-driven decisions and growth.
+                    </span>
+                </p>
+                <span class="service-badge">SMART</span>
+            </a>
+
+            <a href="#services" class="service-card">
+                <i class="fas fa-code service-icon"></i>
+                <h3 class="service-title">
+                    <span data-en="Web Development" data-ar="تطوير الويب">Web Development</span>
+                </h3>
+                <p class="service-description">
+                    <span data-en="Building scalable web applications with modern frameworks." data-ar="بناء تطبيقات ويب قابلة للتوسع باستخدام أطر عمل حديثة.">
+                        Building scalable web applications with modern frameworks.
+                    </span>
+                </p>
+                <span class="service-badge">CODE</span>
+            </a>
         </div>
+
         <p class="footer-text">
             <span data-en="© 2024 HexMind Solutions. Vision 2030 Strategic Partner. All Rights Reserved." data-ar="© 2024 هيكس مايند سوليوشنز. شريك استراتيجي رؤية 2030. جميع الحقوق محفوظة.">
                 © 2024 HexMind Solutions. Vision 2030 Strategic Partner. All Rights Reserved.
@@ -2147,20 +2265,14 @@
     </div>
 
     <script>
-        // =============================================
-        // PRODUCTION-READY JAVASCRIPT
-        // =============================================
-
         'use strict';
 
-        // Configuration
         const CONFIG = {
             PRELOADER_DURATION: 2000,
             SCROLL_THRESHOLD: 50,
             CURSOR_SPEED: 0.15
         };
 
-        // State
         const state = {
             isRTL: false,
             lang: 'en',
@@ -2170,12 +2282,12 @@
             cursorY: 0
         };
 
-        // DOM Elements
         const DOM = {
             preloader: document.getElementById('preloader'),
             header: document.getElementById('header'),
             nav: document.getElementById('nav'),
             mobileToggle: document.getElementById('mobileToggle'),
+            mobileNavClose: document.getElementById('mobileNavClose'),
             langBtn: document.getElementById('langBtn'),
             scrollIndicator: document.getElementById('scrollIndicator'),
             contactForm: document.getElementById('contactForm'),
@@ -2189,10 +2301,7 @@
             serviceCards: document.querySelectorAll('.service-card')
         };
 
-        // =============================================
-        // PRELOADER
-        // =============================================
-
+        // Preloader
         function initPreloader() {
             let progress = 0;
             const progressEl = document.querySelector('.loader-progress');
@@ -2214,19 +2323,16 @@
             }, 80);
         }
 
-        // =============================================
-        // ENHANCED CURSOR
-        // =============================================
-
+        // Cursor
         function initCursor() {
+            if (!DOM.cursorDot || !DOM.cursorRing) return;
+            
             document.addEventListener('mousemove', (e) => {
                 state.mouseX = e.clientX;
                 state.mouseY = e.clientY;
                 
-                if (DOM.cursorDot) {
-                    DOM.cursorDot.style.left = state.mouseX + 'px';
-                    DOM.cursorDot.style.top = state.mouseY + 'px';
-                }
+                DOM.cursorDot.style.left = state.mouseX + 'px';
+                DOM.cursorDot.style.top = state.mouseY + 'px';
             });
 
             function animate() {
@@ -2236,17 +2342,14 @@
                 state.cursorX += distX * CONFIG.CURSOR_SPEED;
                 state.cursorY += distY * CONFIG.CURSOR_SPEED;
                 
-                if (DOM.cursorRing) {
-                    DOM.cursorRing.style.left = state.cursorX + 'px';
-                    DOM.cursorRing.style.top = state.cursorY + 'px';
-                }
+                DOM.cursorRing.style.left = state.cursorX + 'px';
+                DOM.cursorRing.style.top = state.cursorY + 'px';
                 
                 requestAnimationFrame(animate);
             }
             
             animate();
 
-            // Hover effects
             const hoverElements = document.querySelectorAll('a, button, .service-card, .panel-item, input, textarea');
             hoverElements.forEach(el => {
                 el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
@@ -2254,10 +2357,7 @@
             });
         }
 
-        // =============================================
-        // THREE.JS BACKGROUND
-        // =============================================
-
+        // Three.js Background
         function initThreeJS() {
             const canvas = document.getElementById('three-canvas');
             if (!canvas || !window.THREE) return;
@@ -2331,10 +2431,7 @@
             });
         }
 
-        // =============================================
-        // HEADER SCROLL
-        // =============================================
-
+        // Header Scroll
         function initHeaderScroll() {
             window.addEventListener('scroll', () => {
                 if (window.scrollY > CONFIG.SCROLL_THRESHOLD) {
@@ -2351,57 +2448,64 @@
             });
         }
 
-        // =============================================
-        // MOBILE MENU
-        // =============================================
-
+        // Mobile Menu
         function initMobileMenu() {
+            const closeMenu = () => DOM.nav.classList.remove('active');
+
             DOM.mobileToggle.addEventListener('click', () => {
-                DOM.nav.classList.toggle('active');
+                DOM.nav.classList.add('active');
             });
 
+            DOM.mobileNavClose.addEventListener('click', closeMenu);
+
             DOM.navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    DOM.nav.classList.remove('active');
-                });
+                link.addEventListener('click', closeMenu);
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!DOM.nav.contains(e.target) && !DOM.mobileToggle.contains(e.target) && DOM.nav.classList.contains('active')) {
+                    closeMenu();
+                }
             });
         }
 
-        // =============================================
-        // LANGUAGE SWITCHER
-        // =============================================
-
+        // Language Switcher
         function initLanguage() {
             DOM.langBtn.addEventListener('click', () => {
                 state.isRTL = !state.isRTL;
                 state.lang = state.isRTL ? 'ar' : 'en';
                 
                 document.body.classList.toggle('rtl');
-                document.documentElement.dir = state.isRTL ? 'rtl' : 'ltr';
                 
-                updateText();
-            });
-        }
+                DOM.langBtn.textContent = state.isRTL ? 'EN' : 'AR';
+                
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = state.isRTL ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.placeholder = text;
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
 
-        function updateText() {
-            document.querySelectorAll('[data-en]').forEach(el => {
-                const text = state.isRTL ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-                if (text) {
-                    el.textContent = text;
+                const glitch = document.querySelector('.glitch-text');
+                if (glitch) {
+                    const text = state.isRTL ? 'هيكس مايند سوليوشنز' : 'HEXMIND SOLUTIONS';
+                    glitch.setAttribute('data-text', text);
                 }
+                
+                document.querySelectorAll('.service-subservices li').forEach(li => {
+                    const text = state.isRTL ? li.getAttribute('data-ar') : li.getAttribute('data-en');
+                    if (text) {
+                        li.textContent = text;
+                    }
+                });
             });
-
-            const glitch = document.querySelector('.glitch-text');
-            if (glitch) {
-                const text = state.isRTL ? 'هيكس مايند سوليوشنز' : 'HEXMIND SOLUTIONS';
-                glitch.setAttribute('data-text', text);
-            }
         }
 
-        // =============================================
-        // SERVICE CARDS
-        // =============================================
-
+        // Service Cards Mouse Effect
         function initServiceCards() {
             DOM.serviceCards.forEach(card => {
                 card.addEventListener('mousemove', (e) => {
@@ -2415,38 +2519,40 @@
             });
         }
 
-        // =============================================
-        // SMOOTH SCROLL
-        // =============================================
-
+        // Smooth Scroll
         function initSmoothScroll() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const target = document.querySelector(targetId);
                     if (target) {
                         target.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
                         });
 
-                        // Update active class for header nav
-                        DOM.navLinks.forEach(link => link.classList.remove('active'));
-                        this.classList.add('active');
+                        DOM.navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === targetId) {
+                                link.classList.add('active');
+                            }
+                        });
 
-                        // Update active class for side nav
-                        DOM.sideNavLinks.forEach(link => link.classList.remove('active'));
-                        const sideLink = [...DOM.sideNavLinks].find(l => l.href === this.href);
-                        if (sideLink) sideLink.classList.add('active');
+                        DOM.sideNavLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === targetId) {
+                                link.classList.add('active');
+                            }
+                        });
                     }
                 });
             });
         }
 
-        // =============================================
-        // CONTACT FORM
-        // =============================================
-
+        // Contact Form
         function initContactForm() {
             DOM.contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -2457,19 +2563,16 @@
                 DOM.contactForm.reset();
             });
 
+            function closeModal() {
+                DOM.modalOverlay.classList.remove('active');
+                DOM.modal.classList.remove('active');
+            }
+
             DOM.modalClose.addEventListener('click', closeModal);
             DOM.modalOverlay.addEventListener('click', closeModal);
         }
 
-        function closeModal() {
-            DOM.modalOverlay.classList.remove('active');
-            DOM.modal.classList.remove('active');
-        }
-
-        // =============================================
-        // INITIALIZATION
-        // =============================================
-
+        // Initialize Everything
         function init() {
             initPreloader();
             initCursor();
@@ -2487,7 +2590,6 @@
         } else {
             init();
         }
-
     </script>
 </body>
 </html>
