@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HexMind Solutions - Leading Digital Transformation & Cybersecurity Partner | Vision 2030">
-    <meta name="keywords" content="cybersecurity, AI, digital transformation, Vision 2030, Saudi Arabia, software development">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="HexMind Solutions - Digital Transformation & Cybersecurity Partner">
+    <meta name="keywords" content="cybersecurity, AI, digital transformation, software development">
     <meta name="author" content="HexMind Solutions">
     <meta name="theme-color" content="#00f3ff">
     <title>HexMind Solutions</title>
     <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimsq2vjv_p4zbn-7H_QemMua8EYBk5UfC6RidmQssWOgTkAMVyKBeTnsPOCdORh1i70Uqp45w0eb0HKQHPUOOgz-nf5Y7BQ41mDSwPfp4MEGStIebLs8Uy2dQjmnLAto2Ik3L6dsWNq-NDjfBmmPgcsV7jOhAZYYOn5NqqBt-59-w5kNRUY_GoM_DMOwjj/s1600/logo.png" type="image/x-icon">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,35 +21,31 @@
 
     <style>
         /* =============================================
-           CORE VARIABLES & RESET
+           PROFESSIONAL CSS - FULL TRANSLATION, TEAM REDESIGN, PORTFOLIO VISUAL
         ============================================= */
         
         :root {
-            /* Brand Colors */
             --primary-cyan: #00f3ff;
             --primary-purple: #a855f7;
             --primary-pink: #ec4899;
             --primary-gold: #c9a227;
             --matrix-green: #00ff41;
             
-            /* Backgrounds */
             --bg-black: #000000;
             --bg-dark: #0a0e1a;
             --bg-darker: #050810;
+            --bg-card: rgba(15, 20, 35, 0.7);
             
-            /* Text Colors */
             --text-white: #ffffff;
             --text-light: #f8fafc;
             --text-gray: #cbd5e1;
-            --text-dim: #64748b;
+            --text-dim: #94a3b8;
             
-            /* Typography */
             --font-display: 'Orbitron', sans-serif;
             --font-body: 'Rajdhani', sans-serif;
             --font-mono: 'Space Mono', monospace;
             --font-arabic: 'Cairo', sans-serif;
             
-            /* Spacing System */
             --space-1: 0.25rem;
             --space-2: 0.5rem;
             --space-3: 1rem;
@@ -58,11 +55,9 @@
             --space-8: 4rem;
             --space-12: 6rem;
             
-            /* Transitions */
-            --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 0.3s ease;
             --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             
-            /* Shadows */
             --shadow-glow-cyan: 0 0 30px rgba(0, 243, 255, 0.4);
             --shadow-glow-purple: 0 0 30px rgba(168, 85, 247, 0.4);
             --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -85,169 +80,56 @@
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
-        }
-
-        /* =============================================
-           LANGUAGE SWITCHING - NO LAYOUT SHIFT
-        ============================================= */
-        
-        body.rtl {
-            font-family: var(--font-arabic);
-        }
-        
-        /* Keep LTR layout always - no direction change */
-        html, body, .header-content, .nav, .hero-container, 
-        .container, .contact-wrapper, .footer,
-        .service-card, .service-subservices li,
-        .form-group, .form-label, .nav-list,
-        .side-nav, .info-panel {
-            direction: ltr !important;
-            text-align: left !important;
-        }
-        
-        /* Only text alignment changes for RTL */
-        body.rtl .hero-title,
-        body.rtl .section-title,
-        body.rtl .service-title,
-        body.rtl .contact-title,
-        body.rtl .footer-logo,
-        body.rtl .section-description,
-        body.rtl .hero-subtitle,
-        body.rtl .service-description,
-        body.rtl .team-bio,
-        body.rtl .about-text,
-        body.rtl .modal-title,
-        body.rtl .modal-text {
-            text-align: center !important;
-        }
-        
-        body.rtl .service-subservices li {
-            padding-right: 1.5rem;
-            padding-left: 0;
-        }
-        
-        body.rtl .service-subservices li::before {
-            left: auto;
-            right: 0;
-            transform: none;
-        }
-        
-        body.rtl .form-label {
-            left: auto;
-            right: 1.25rem;
-        }
-        
-        body.rtl .form-input:focus ~ .form-label,
-        body.rtl .form-input:not(:placeholder-shown) ~ .form-label,
-        body.rtl .form-textarea:focus ~ .form-label,
-        body.rtl .form-textarea:not(:placeholder-shown) ~ .form-label {
-            left: auto;
-            right: 1rem;
-        }
-        
-        body.rtl .side-nav {
-            left: 0;
-            right: auto;
-            border-right: 1px solid rgba(0, 243, 255, 0.3);
-            border-left: none;
-        }
-        
-        body.rtl .info-panel.left {
-            left: 5%;
-            right: auto;
-        }
-        
-        body.rtl .info-panel.right {
-            right: 5%;
-            left: auto;
-        }
-        
-        body.rtl .mobile-nav-close {
-            right: auto;
-            left: 20px;
+            cursor: auto;
         }
 
         /* =============================================
            CUSTOM SCROLLBAR
         ============================================= */
-        
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 12px;
+            height: 8px;
         }
-
         ::-webkit-scrollbar-track {
-            background: var(--bg-darker); 
+            background: var(--bg-darker);
+            border-left: 1px solid rgba(0, 243, 255, 0.1);
         }
-
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--primary-cyan), var(--primary-purple));
-            border-radius: 5px;
-            border: 2px solid var(--bg-darker);
+            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-purple));
+            border-radius: 10px;
+            border: 2px solid var(--bg-black);
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.5), 0 0 15px var(--primary-cyan);
         }
-
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-cyan);
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-cyan));
+            box-shadow: 0 0 25px var(--primary-purple);
         }
-
         * {
             scrollbar-width: thin;
             scrollbar-color: var(--primary-cyan) var(--bg-darker);
         }
 
         /* =============================================
-           ENHANCED CUSTOM CURSOR
+           UTILITIES
         ============================================= */
-        
-        .cursor {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 5%, 3rem);
         }
 
-        .cursor-dot {
-            width: 12px;
-            height: 12px;
-            background: var(--primary-cyan);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.8), 0 0 40px rgba(0, 243, 255, 0.4);
-            transition: transform 0.2s ease-out;
+        .section {
+            padding: var(--space-12) 0;
+            position: relative;
         }
 
-        .cursor-ring {
-            width: 48px;
-            height: 48px;
-            border: 3px solid var(--primary-cyan);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s ease-out;
-            opacity: 0.7;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
-        }
-
-        body.cursor-hover .cursor-dot {
-            transform: translate(-50%, -50%) scale(1.5);
-        }
-
-        body.cursor-hover .cursor-ring {
-            width: 72px;
-            height: 72px;
-            border-color: var(--matrix-green);
-            opacity: 1;
-            border-width: 4px;
-            box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
-        }
-
-        @media (pointer: coarse) {
-            .cursor { display: none; }
-            body { cursor: auto; }
+        .hidden {
+            display: none !important;
         }
 
         /* =============================================
            BACKGROUND EFFECTS
         ============================================= */
-        
         #three-canvas {
             position: fixed;
             top: 0;
@@ -272,7 +154,6 @@
         /* =============================================
            PRELOADER
         ============================================= */
-        
         #preloader {
             position: fixed;
             top: 0;
@@ -291,10 +172,6 @@
         #preloader.fade-out {
             opacity: 0;
             visibility: hidden;
-        }
-
-        .loader-container {
-            text-align: center;
         }
 
         .loader-rings {
@@ -366,9 +243,8 @@
         }
 
         /* =============================================
-           HEADER
+           HEADER - STATIC LOGO, LTR ONLY
         ============================================= */
-        
         .header {
             position: fixed;
             top: 0;
@@ -403,47 +279,13 @@
             align-items: center;
             gap: var(--space-3);
             text-decoration: none;
-            transition: transform var(--transition-base);
         }
 
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-icon {
+        .logo-img {
             width: 50px;
             height: 50px;
-            position: relative;
-        }
-
-        .logo-icon svg {
-            width: 100%;
-            height: 100%;
+            object-fit: contain;
             filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.6));
-        }
-
-        .hex-shape {
-            fill: none;
-            stroke: var(--primary-cyan);
-            stroke-width: 2;
-            animation: hexRotate 6s linear infinite;
-            transform-origin: center;
-        }
-
-        @keyframes hexRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .hex-core {
-            fill: var(--primary-cyan);
-            opacity: 0.3;
-            animation: hexPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes hexPulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.1); }
         }
 
         .logo-text {
@@ -456,13 +298,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientFlow 3s ease infinite;
             white-space: nowrap;
-        }
-
-        @keyframes gradientFlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
         }
 
         .nav {
@@ -569,95 +405,25 @@
             transition: all var(--transition-base);
         }
 
-        /* Mobile Nav Close Button - Hidden on Desktop */
-        .mobile-nav-close {
+        .mobile-close {
             display: none;
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 1.5rem;
+            right: 1.5rem;
             background: transparent;
             border: none;
             color: var(--primary-cyan);
             font-size: 2rem;
             cursor: pointer;
-            z-index: 1002;
-            transition: color 0.3s;
+            z-index: 1001;
+            transition: transform 0.3s;
         }
-
-        .mobile-nav-close:hover {
-            color: var(--primary-pink);
+        .mobile-close:hover {
+            transform: rotate(90deg);
         }
-
         /* =============================================
-           SIDE NAVIGATION BAR
+           HERO SECTION - NO VISION REFERENCES
         ============================================= */
-
-        .side-nav {
-            position: fixed;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 60px;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(20px);
-            border-right: 1px solid rgba(0, 243, 255, 0.3);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--space-4) 0;
-            gap: var(--space-4);
-            transition: width 0.4s ease;
-        }
-
-        .side-nav:hover {
-            width: 200px;
-        }
-
-        .side-nav-link {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            color: var(--text-gray);
-            text-decoration: none;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            transition: color var(--transition-base);
-            white-space: nowrap;
-            overflow: hidden;
-            width: 100%;
-            padding: 0 var(--space-3);
-        }
-
-        .side-nav-link i {
-            font-size: 1.2rem;
-            min-width: 24px;
-        }
-
-        .side-nav-link span {
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .side-nav:hover .side-nav-link span {
-            opacity: 1;
-        }
-
-        .side-nav-link:hover,
-        .side-nav-link.active {
-            color: var(--primary-cyan);
-        }
-
-        @media (max-width: 1024px) {
-            .side-nav {
-                display: none;
-            }
-        }
-
-        /* =============================================
-           HERO SECTION
-        ============================================= */
-        
         .hero {
             min-height: 100vh;
             display: flex;
@@ -674,26 +440,22 @@
         }
 
         .hero-badge {
-    gap: var(--space-3);
-    padding: var(--space-2) var(--space-4);
-    background: rgba(0, 243, 255, 0.05);
-    border: 1px solid var(--primary-cyan);
-    border-radius: 50px;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--primary-cyan);
-    text-transform: uppercase;
-    margin-bottom: var(--space-5);
-    animation: badgeGlow 3s infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-2) var(--space-4);
+            background: rgba(0, 243, 255, 0.05);
+            border: 1px solid var(--primary-cyan);
+            border-radius: 50px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--primary-cyan);
+            text-transform: uppercase;
+            margin-bottom: var(--space-5);
+            animation: badgeGlow 3s infinite;
+        }
 
         @keyframes badgeGlow {
             0%, 100% { box-shadow: 0 0 20px rgba(0, 243, 255, 0.2); }
@@ -762,6 +524,7 @@
             75% { clip: rect(90px, 9999px, 120px, 0); }
             100% { clip: rect(40px, 9999px, 60px, 0); }
         }
+
         @keyframes glitch2 {
             0% { clip: rect(85px, 9999px, 140px, 0); }
             25% { clip: rect(60px, 9999px, 90px, 0); }
@@ -776,7 +539,6 @@
             font-size: clamp(1rem, 2vw, 1.25rem);
             line-height: 1.8;
             color: var(--text-dim);
-            text-align: center;
         }
 
         .hero-cta {
@@ -798,13 +560,11 @@
             transition: all var(--transition-base);
             position: relative;
             overflow: hidden;
-            display: inline-block;
-            border: 2px solid transparent;
-            cursor: pointer;
         }
 
         .btn-primary {
-            border-color: var(--primary-cyan);
+            background: transparent;
+            border: 2px solid var(--primary-cyan);
             color: var(--text-white);
         }
 
@@ -831,9 +591,9 @@
         }
 
         .btn-secondary {
-            border-color: rgba(255, 255, 255, 0.2);
-            color: var(--text-white);
             background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-white);
         }
 
         .btn-secondary:hover {
@@ -866,16 +626,8 @@
             50% { transform: translateY(-20px); }
         }
 
-        .info-panel.left {
-            top: 25%;
-            left: 5%;
-        }
-
-        .info-panel.right {
-            bottom: 25%;
-            right: 5%;
-            animation-delay: 3s;
-        }
+        .info-panel.left { top: 25%; left: 5%; }
+        .info-panel.right { bottom: 25%; right: 5%; animation-delay: 3s; }
 
         .panel-header {
             display: flex;
@@ -893,10 +645,6 @@
             letter-spacing: 0.15em;
             color: var(--primary-purple);
             text-transform: uppercase;
-        }
-
-        .panel-icon {
-            color: var(--primary-cyan);
         }
 
         .panel-list {
@@ -918,32 +666,11 @@
             color: var(--text-white);
             padding-left: var(--space-2);
         }
-
-        .panel-item i {
-            color: var(--primary-cyan);
-        }
-
-        @media (max-width: 1200px) {
-            .info-panel {
-                display: none;
-            }
-        }
+        .panel-item i { color: var(--primary-cyan); }
 
         /* =============================================
-           SECTIONS STYLING
+           SECTIONS COMMON
         ============================================= */
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 5%, 3rem);
-        }
-
-        .section {
-            padding: var(--space-12) 0;
-            position: relative;
-        }
-
         .section-header {
             max-width: 800px;
             margin: 0 auto var(--space-8);
@@ -974,14 +701,12 @@
             text-transform: uppercase;
             color: var(--text-white);
             margin-bottom: var(--space-4);
-            text-align: center;
         }
 
         .section-description {
             font-size: 1.125rem;
             line-height: 1.8;
             color: var(--text-dim);
-            text-align: center;
         }
 
         /* Services Grid */
@@ -993,51 +718,15 @@
             margin: 0 auto;
         }
 
-        /* Service Card Style */
         .service-card {
             position: relative;
             padding: var(--space-6);
-            background: rgba(15, 20, 35, 0.6);
+            background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             overflow: hidden;
             transition: all var(--transition-base);
             cursor: pointer;
-            text-align: left;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(
-                800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                rgba(0, 243, 255, 0.08),
-                transparent 40%
-            );
-            opacity: 0;
-            transition: opacity var(--transition-smooth);
-            pointer-events: none;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple), var(--primary-pink));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--transition-smooth);
         }
 
         .service-card:hover {
@@ -1046,20 +735,11 @@
             box-shadow: var(--shadow-xl), var(--shadow-glow-cyan);
         }
 
-        .service-card:hover::after {
-            transform: scaleX(1);
-        }
-
         .service-icon {
             font-size: clamp(2.5rem, 4vw, 3rem);
             color: var(--primary-cyan);
             margin-bottom: var(--space-4);
             filter: drop-shadow(0 0 20px rgba(0, 243, 255, 0.6));
-            transition: transform var(--transition-base);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotateY(360deg);
         }
 
         .service-title {
@@ -1080,10 +760,8 @@
 
         .service-subservices {
             list-style-type: none;
-            padding: 0;
-            margin-bottom: var(--space-4);
+            padding-left: 0;
         }
-
         .service-subservices li {
             margin-bottom: var(--space-2);
             font-size: clamp(0.85rem, 1.2vw, 0.9rem);
@@ -1091,7 +769,6 @@
             position: relative;
             padding-left: 1.5rem;
         }
-
         .service-subservices li::before {
             content: '\f058';
             font-family: 'Font Awesome 6 Free';
@@ -1101,126 +778,14 @@
             color: var(--primary-cyan);
         }
 
-        .service-badge {
-            display: inline-block;
-            padding: 0.375rem 0.875rem;
-            background: rgba(201, 162, 39, 0.1);
-            border: 1px solid var(--primary-gold);
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.625rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            color: var(--primary-gold);
-            text-transform: uppercase;
-        }
-
-        /* =============================================
-           MEET THE FOUNDERS - FROM INDEX3.HTML
-        ============================================= */
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .team-member {
-            text-align: center;
-            padding: 3rem;
-            background: rgba(15,20,35,0.6);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .team-member:hover {
-            border-color: rgba(0,243,255,0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,243,255,0.4);
-        }
-
-        .team-avatar {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 2rem;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #fff;
-            box-shadow: 0 0 30px rgba(0,243,255,0.4);
-        }
-
-        .team-name {
-            font-family: var(--font-display);
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-role {
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            color: var(--primary-cyan);
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .team-bio {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-dim);
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(0,243,255,0.1);
-            border: 1px solid var(--primary-cyan);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-cyan);
-            font-size: 1.25rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary-cyan);
-            color: #000;
-            box-shadow: 0 0 20px var(--primary-cyan);
-        }
-
-        @media (max-width: 968px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         /* =============================================
            ABOUT SECTION
         ============================================= */
-        
         .about-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            align-items: center;
         }
 
         .about-text h2 {
@@ -1238,21 +803,352 @@
             margin-bottom: var(--space-4);
         }
 
-        /* =============================================
-           PORTFOLIO SECTION
-        ============================================= */
-        
-        .portfolio-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .stat-item {
+            padding: var(--space-4);
+            background: rgba(0, 243, 255, 0.05);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 900;
+            color: var(--primary-cyan);
+            margin-bottom: var(--space-2);
+        }
+
+        .stat-label {
+            font-size: clamp(0.8rem, 1vw, 0.875rem);
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         /* =============================================
-           CONTACT FORM
+           TEAM SECTION - REDESIGNED, ELEGANT, NO SOCIAL
         ============================================= */
-        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--space-6);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: linear-gradient(145deg, rgba(20, 25, 45, 0.9), rgba(8, 12, 22, 0.95));
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            padding: var(--space-6) var(--space-5);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+            border: 1px solid rgba(0, 243, 255, 0.1);
+            transition: all 0.4s;
+        }
+
+        .team-member:hover {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 25px 50px -5px rgba(0, 243, 255, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(0,243,255,0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .team-member:hover::before {
+            opacity: 1;
+        }
+
+        .team-avatar {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto var(--space-4);
+            position: relative;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            background: linear-gradient(145deg, var(--primary-cyan), var(--primary-purple)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            padding: 3px;
+            transition: transform 0.5s;
+            box-shadow: 0 0 30px rgba(0,243,255,0.3);
+        }
+
+        .team-member:hover .team-avatar img {
+            transform: scale(1.05);
+            box-shadow: 0 0 45px rgba(0,243,255,0.5);
+        }
+
+        .team-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: var(--space-2);
+            letter-spacing: 0.05em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .team-name::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+            border-radius: 3px;
+        }
+
+        .team-role {
+            font-size: 1.1rem;
+            color: var(--primary-cyan);
+            margin: var(--space-4) 0 var(--space-3);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            background: rgba(0,243,255,0.08);
+            display: inline-block;
+            padding: 0.4rem 1.8rem;
+            border-radius: 50px;
+            border: 1px solid rgba(0,243,255,0.3);
+        }
+
+        .team-bio {
+            font-size: 0.98rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-top: var(--space-3);
+            padding: 0 var(--space-2);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: var(--space-4);
+        }
+
+        /* =============================================
+           PORTFOLIO - VISUAL SLIDER, MINIMAL TEXT
+        ============================================= */
+        .portfolio-slider {
+            position: relative;
+            max-width: 1300px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 50px;
+        }
+
+        .portfolio-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 30px;
+        }
+
+        .portfolio-slide {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 280px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .portfolio-slide:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 40px rgba(0,243,255,0.2);
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .portfolio-slide:hover .slide-image img {
+            transform: scale(1.1);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .portfolio-slide:hover .slide-overlay {
+            opacity: 1;
+        }
+
+        .slide-content {
+            padding: var(--space-4);
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            width: 100%;
+        }
+
+        .slide-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 5px;
+        }
+
+        .slide-meta {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--primary-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(0,0,0,0.6);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 50%;
+            color: var(--primary-cyan);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .slider-btn:hover {
+            background: var(--primary-cyan);
+            color: var(--bg-black);
+            box-shadow: 0 0 20px var(--primary-cyan);
+        }
+        .slider-btn.prev { left: 0; }
+        .slider-btn.next { right: 0; }
+
+        /* Project Modal */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(15px);
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+        }
+        .project-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            max-width: 900px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: rgba(10,14,26,0.98);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 24px;
+            padding: var(--space-6);
+            position: relative;
+            box-shadow: 0 0 60px rgba(0,243,255,0.3);
+            color: var(--text-light);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--primary-cyan);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .modal-close-btn:hover { transform: rotate(90deg); }
+        .modal-content h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: var(--space-3);
+            color: var(--primary-cyan);
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 12px;
+            margin: var(--space-4) 0;
+        }
+        .modal-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 968px) {
+            .portfolio-slide { flex: 0 0 calc(50% - 15px); }
+        }
+        @media (max-width: 600px) {
+            .portfolio-slide { flex: 0 0 100%; }
+            .portfolio-slider { padding: 0 30px; }
+        }
+
+        /* =============================================
+           CONTACT FORM & FOOTER
+        ============================================= */
         .contact-wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -1264,7 +1160,6 @@
             box-shadow: var(--shadow-xl);
             position: relative;
         }
-
         .contact-wrapper::before,
         .contact-wrapper::after {
             content: '';
@@ -1272,7 +1167,6 @@
             width: 60px;
             height: 60px;
         }
-
         .contact-wrapper::before {
             top: -1px;
             left: -1px;
@@ -1280,7 +1174,6 @@
             border-left: 3px solid var(--primary-pink);
             border-top-left-radius: 12px;
         }
-
         .contact-wrapper::after {
             bottom: -1px;
             right: -1px;
@@ -1288,12 +1181,10 @@
             border-right: 3px solid var(--primary-cyan);
             border-bottom-right-radius: 12px;
         }
-
         .contact-header {
             text-align: center;
             margin-bottom: var(--space-6);
         }
-
         .contact-title {
             font-family: var(--font-display);
             font-size: clamp(2rem, 4vw, 3rem);
@@ -1303,27 +1194,16 @@
             color: var(--text-white);
             margin-bottom: var(--space-3);
         }
-
-        .contact-subtitle {
-            font-size: clamp(1rem, 1.5vw, 1.125rem);
-            color: var(--text-dim);
-        }
-
         .contact-form {
             display: grid;
             gap: var(--space-5);
         }
-
         .form-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: var(--space-5);
         }
-
-        .form-group {
-            position: relative;
-        }
-
+        .form-group { position: relative; }
         .form-label {
             position: absolute;
             top: 1.125rem;
@@ -1336,7 +1216,6 @@
             background: var(--bg-darker);
             padding: 0 var(--space-2);
         }
-
         .form-input,
         .form-textarea {
             width: 100%;
@@ -1350,14 +1229,12 @@
             transition: all var(--transition-base);
             outline: none;
         }
-
         .form-input:focus,
         .form-textarea:focus {
             border-color: var(--primary-cyan);
             background: rgba(0, 243, 255, 0.05);
             box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
         }
-
         .form-input:focus ~ .form-label,
         .form-input:not(:placeholder-shown) ~ .form-label,
         .form-textarea:focus ~ .form-label,
@@ -1367,17 +1244,9 @@
             font-size: 0.75rem;
             color: var(--primary-cyan);
         }
-
         .form-input::placeholder,
-        .form-textarea::placeholder {
-            opacity: 0;
-        }
-
-        .form-textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
+        .form-textarea::placeholder { opacity: 0; }
+        .form-textarea { min-height: 150px; resize: vertical; }
         .form-submit {
             width: 100%;
             padding: 1.25rem;
@@ -1392,69 +1261,26 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: all var(--transition-base);
-            position: relative;
-            overflow: hidden;
         }
-
-        .form-submit::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
         .form-submit:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-xl), var(--shadow-glow-cyan);
         }
 
-        .form-submit:hover::before {
-            width: 400px;
-            height: 400px;
-        }
-
-        /* =============================================
-           FOOTER
-        ============================================= */
-        
         .footer {
-            padding: var(--space-12) 0 var(--space-5);
+            padding: var(--space-8) 0 var(--space-5);
             background: var(--bg-black);
             border-top: 1px solid rgba(0, 243, 255, 0.2);
             text-align: center;
-            position: relative;
         }
-
         .footer-logo {
             font-family: var(--font-display);
             font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: 900;
             letter-spacing: 0.1em;
             color: var(--text-white);
-            margin-bottom: var(--space-6);
+            margin-bottom: var(--space-4);
         }
-        
-        .footer-description {
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
-            color: var(--text-dim);
-            max-width: 600px;
-            margin: 0 auto var(--space-8);
-        }
-
-        .footer-services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-5);
-            max-width: 1400px;
-            margin: 0 auto var(--space-8);
-        }
-
         .footer-status {
             display: inline-flex;
             align-items: center;
@@ -1469,9 +1295,8 @@
             letter-spacing: 0.1em;
             color: var(--matrix-green);
             text-transform: uppercase;
-            margin-bottom: var(--space-8);
+            margin-bottom: var(--space-5);
         }
-
         .footer-status .status-dot {
             width: 8px;
             height: 8px;
@@ -1480,17 +1305,28 @@
             box-shadow: 0 0 10px var(--matrix-green);
             animation: blink 2s infinite;
         }
-
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+        .social-link {
+            color: var(--text-gray);
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            transition: all var(--transition-base);
+        }
+        .social-link:hover {
+            color: var(--primary-cyan);
+            transform: scale(1.2);
+            box-shadow: var(--shadow-glow-cyan);
+        }
         .footer-text {
             font-size: clamp(0.8rem, 1vw, 0.875rem);
             color: var(--text-dim);
-            margin-top: var(--space-8);
         }
 
-        /* =============================================
-           MODAL
-        ============================================= */
-        
+        /* Contact Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -1504,12 +1340,10 @@
             visibility: hidden;
             transition: all var(--transition-base);
         }
-
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         .modal {
             position: fixed;
             top: 50%;
@@ -1528,25 +1362,21 @@
             transition: all var(--transition-base);
             text-align: center;
         }
-
         .modal.active {
             opacity: 1;
             visibility: visible;
             transform: translate(-50%, -50%) scale(1);
         }
-
         .modal-icon {
             font-size: clamp(3rem, 6vw, 4rem);
             color: var(--primary-cyan);
             margin-bottom: var(--space-5);
             animation: modalPulse 1.5s infinite;
         }
-
         @keyframes modalPulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
         }
-
         .modal-title {
             font-family: var(--font-display);
             font-size: clamp(1.5rem, 3vw, 1.75rem);
@@ -1556,14 +1386,12 @@
             margin-bottom: var(--space-3);
             text-transform: uppercase;
         }
-
         .modal-text {
             font-size: clamp(0.9rem, 1.5vw, 1rem);
             line-height: 1.6;
             color: var(--text-dim);
             margin-bottom: var(--space-5);
         }
-
         .modal-close {
             padding: var(--space-3) var(--space-6);
             background: transparent;
@@ -1578,7 +1406,6 @@
             cursor: pointer;
             transition: all var(--transition-base);
         }
-
         .modal-close:hover {
             background: var(--primary-cyan);
             color: var(--bg-black);
@@ -1586,18 +1413,13 @@
         }
 
         /* =============================================
-           RESPONSIVE DESIGN
+           RESPONSIVE
         ============================================= */
-        
+        @media (max-width: 1200px) {
+            .info-panel { display: none; }
+        }
         @media (max-width: 968px) {
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .mobile-nav-close {
-                display: block;
-            }
-
+            .mobile-toggle { display: flex; }
             .nav {
                 position: fixed;
                 top: 0;
@@ -1609,76 +1431,18 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: var(--space-5);
-                transition: left 0.4s ease-in-out;
+                transition: left var(--transition-smooth);
                 z-index: 999;
-                padding-top: 60px;
             }
-
-            .nav.active {
-                left: 0;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                gap: var(--space-5);
-            }
-
-            .nav-link {
-                font-size: 1.25rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-wrapper {
-                padding: var(--space-6) var(--space-5);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .logo-text {
-                font-size: 1.25rem;
-            }
-            
-            .footer-services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-                padding: 0 1rem;
-            }
-            
-            .team-member {
-                padding: 2rem;
-            }
+            .nav.active { left: 0; }
+            .nav-list { flex-direction: column; gap: var(--space-5); }
+            .mobile-close { display: block; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Noise Overlay -->
+    <!-- Background -->
     <div class="noise-overlay"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor cursor-dot" style="left: 0; top: 0;"></div>
-    <div class="cursor cursor-ring" style="left: 0; top: 0;"></div>
-
-    <!-- Three.js Canvas -->
     <canvas id="three-canvas"></canvas>
 
     <!-- Preloader -->
@@ -1697,20 +1461,12 @@
     <!-- Header -->
     <header class="header" id="header">
         <div class="header-content">
-            <div class="logo" style="pointer-events: none;">
-                <div class="logo-icon">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimsq2vjv_p4zbn-7H_QemMua8EYBk5UfC6RidmQssWOgTkAMVyKBeTnsPOCdORh1i70Uqp45w0eb0HKQHPUOOgz-nf5Y7BQ41mDSwPfp4MEGStIebLs8Uy2dQjmnLAto2Ik3L6dsWNq-NDjfBmmPgcsV7jOhAZYYOn5NqqBt-59-w5kNRUY_GoM_DMOwjj/s1600/logo.png" 
-                         alt="HexMind Solutions" 
-                         style="width: 50px; height: 50px; object-fit: contain; pointer-events: none;">
-                </div>
-                <span class="logo-text" data-en="HEXMIND SOLUTIONS" data-ar="هيكس مايند سوليوشنز" style="pointer-events: none;">HEXMIND SOLUTIONS</span>
-            </div>
-
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimsq2vjv_p4zbn-7H_QemMua8EYBk5UfC6RidmQssWOgTkAMVyKBeTnsPOCdORh1i70Uqp45w0eb0HKQHPUOOgz-nf5Y7BQ41mDSwPfp4MEGStIebLs8Uy2dQjmnLAto2Ik3L6dsWNq-NDjfBmmPgcsV7jOhAZYYOn5NqqBt-59-w5kNRUY_GoM_DMOwjj/s1600/logo.png" alt="HexMind Logo" class="logo-img">
+                <span class="logo-text" data-en="HEXMIND SOLUTIONS" data-ar="هيكس مايند سوليوشنز">HEXMIND SOLUTIONS</span>
+            </a>
             <nav class="nav" id="nav">
-                <button class="mobile-nav-close" id="mobileNavClose">
-                    <i class="fas fa-times"></i>
-                </button>
-
+                <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link active" data-en="HOME" data-ar="الرئيسية">HOME</a></li>
                     <li><a href="#services" class="nav-link" data-en="SERVICES" data-ar="الخدمات">SERVICES</a></li>
@@ -1721,875 +1477,556 @@
                 </ul>
                 <button class="lang-btn" id="langBtn" data-en="AR" data-ar="EN">AR</button>
             </nav>
-
             <button class="mobile-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
-
-    <!-- Side Navigation Bar -->
-    <nav class="side-nav">
-        <a href="#home" class="side-nav-link active">
-            <i class="fas fa-home"></i>
-            <span data-en="Home" data-ar="الرئيسية">Home</span>
-        </a>
-        <a href="#services" class="side-nav-link">
-            <i class="fas fa-cogs"></i>
-            <span data-en="Services" data-ar="الخدمات">Services</span>
-        </a>
-        <a href="#about" class="side-nav-link">
-            <i class="fas fa-info-circle"></i>
-            <span data-en="About" data-ar="عن">About</span>
-        </a>
-        <a href="#team" class="side-nav-link">
-            <i class="fas fa-users"></i>
-            <span data-en="Team" data-ar="الفريق">Team</span>
-        </a>
-        <a href="#portfolio" class="side-nav-link">
-            <i class="fas fa-briefcase"></i>
-            <span data-en="Portfolio" data-ar="الأعمال">Portfolio</span>
-        </a>
-        <a href="#contact" class="side-nav-link">
-            <i class="fas fa-envelope"></i>
-            <span data-en="Contact" data-ar="اتصل">Contact</span>
-        </a>
-    </nav>
-
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                <span data-en="VISION 2030 STRATEGIC PARTNER • SYSTEM ONLINE" data-ar="شريك استراتيجي رؤية 2030 • النظام متاح">VISION 2030 STRATEGIC PARTNER • SYSTEM ONLINE</span>
+                <span data-en="ENTERPRISE TECHNOLOGY PARTNER • SYSTEM ONLINE" data-ar="شريك تقني متكامل • النظام متاح">ENTERPRISE TECHNOLOGY PARTNER • SYSTEM ONLINE</span>
             </div>
-
             <h1 class="hero-title">
                 <span class="glitch-text" data-text="HEXMIND SOLUTIONS">
                     <span data-en="HEXMIND SOLUTIONS" data-ar="هيكس مايند سوليوشنز">HEXMIND SOLUTIONS</span>
                 </span>
             </h1>
-
             <p class="hero-subtitle">
-                <span data-en="Leading the digital transformation revolution through quantum-resistant cybersecurity, advanced artificial intelligence, and innovative technology solutions aligned with Saudi Vision 2030." data-ar="قيادة ثورة التحول الرقمي من خلال الأمن السيبراني المقاوم للكم، والذكاء الاصطناعي المتقدم، وحلول التكنولوجيا المبتكرة بما يتماشى مع رؤية السعودية 2030.">
-                    Leading the digital transformation revolution through quantum-resistant cybersecurity, advanced artificial intelligence, and innovative technology solutions aligned with Saudi Vision 2030.
+                <span data-en="Leading the digital transformation revolution through quantum-resistant cybersecurity, advanced AI, and innovative technology solutions." data-ar="قيادة ثورة التحول الرقمي من خلال الأمن السيبراني المقاوم للكم، والذكاء الاصطناعي المتقدم، وحلول التكنولوجيا المبتكرة.">
+                    Leading the digital transformation revolution through quantum-resistant cybersecurity, advanced AI, and innovative technology solutions.
                 </span>
             </p>
-
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">
-                    <span data-en="START YOUR PROJECT" data-ar="ابدأ مشروعك">START YOUR PROJECT</span>
-                </a>
-                <a href="#services" class="btn btn-secondary">
-                    <span data-en="EXPLORE SOLUTIONS" data-ar="استكشف الحلول">EXPLORE SOLUTIONS</span>
-                </a>
+                <a href="#contact" class="btn btn-primary"><span data-en="START YOUR PROJECT" data-ar="ابدأ مشروعك">START YOUR PROJECT</span></a>
+                <a href="#services" class="btn btn-secondary"><span data-en="EXPLORE SOLUTIONS" data-ar="استكشف الحلول">EXPLORE SOLUTIONS</span></a>
             </div>
         </div>
-
-        <!-- Info Panels -->
         <div class="info-panel left">
-            <div class="panel-header">
-                <span class="panel-title" data-en="CORE TECH" data-ar="التقنيات الأساسية">CORE TECH</span>
-                <i class="fas fa-microchip panel-icon"></i>
-            </div>
+            <div class="panel-header"><span class="panel-title" data-en="CORE TECH" data-ar="التقنيات الأساسية">CORE TECH</span><i class="fas fa-microchip panel-icon"></i></div>
             <ul class="panel-list">
-                <li class="panel-item">
-                    <i class="fas fa-shield-halved"></i>
-                    <span data-en="Quantum Security" data-ar="الأمن الكمي">Quantum Security</span>
-                </li>
-                <li class="panel-item">
-                    <i class="fas fa-brain"></i>
-                    <span data-en="AI Systems" data-ar="أنظمة الذكاء">AI Systems</span>
-                </li>
-                <li class="panel-item">
-                    <i class="fas fa-code"></i>
-                    <span data-en="Full Stack" data-ar="التطوير الشامل">Full Stack</span>
-                </li>
+                <li class="panel-item"><i class="fas fa-shield-halved"></i><span data-en="Quantum Security" data-ar="الأمن الكمي">Quantum Security</span></li>
+                <li class="panel-item"><i class="fas fa-brain"></i><span data-en="AI Systems" data-ar="أنظمة الذكاء">AI Systems</span></li>
+                <li class="panel-item"><i class="fas fa-code"></i><span data-en="Full Stack" data-ar="التطوير الشامل">Full Stack</span></li>
             </ul>
         </div>
-
         <div class="info-panel right">
-            <div class="panel-header">
-                <span class="panel-title" data-en="SOLUTIONS" data-ar="الحلول">SOLUTIONS</span>
-                <i class="fas fa-rocket panel-icon"></i>
-            </div>
+            <div class="panel-header"><span class="panel-title" data-en="SOLUTIONS" data-ar="الحلول">SOLUTIONS</span><i class="fas fa-rocket panel-icon"></i></div>
             <ul class="panel-list">
-                <li class="panel-item">
-                    <i class="fas fa-bullhorn"></i>
-                    <span data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</span>
-                </li>
-                <li class="panel-item">
-                    <i class="fas fa-film"></i>
-                    <span data-en="Media Production" data-ar="الإنتاج">Media Production</span>
-                </li>
-                <li class="panel-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span data-en="Education" data-ar="التعليم">Education</span>
-                </li>
+                <li class="panel-item"><i class="fas fa-bullhorn"></i><span data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</span></li>
+                <li class="panel-item"><i class="fas fa-film"></i><span data-en="Media Production" data-ar="الإنتاج">Media Production</span></li>
+                <li class="panel-item"><i class="fas fa-graduation-cap"></i><span data-en="Education" data-ar="التعليم">Education</span></li>
             </ul>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="OUR CAPABILITIES" data-ar="قدراتنا">OUR CAPABILITIES</span>
-                <h2 class="section-title">
-                    <span data-en="ENTERPRISE SOLUTIONS" data-ar="حلول المؤسسات">ENTERPRISE SOLUTIONS</span>
-                </h2>
-                <p class="section-description">
-                    <span data-en="Cutting-edge technology solutions designed to drive digital transformation and business growth in alignment with Saudi Vision 2030." data-ar="حلول تقنية متطورة مصممة لدفع التحول الرقمي ونمو الأعمال بما يتماشى مع رؤية السعودية 2030.">
-                        Cutting-edge technology solutions designed to drive digital transformation and business growth in alignment with Saudi Vision 2030.
-                    </span>
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <i class="fas fa-shield-halved service-icon"></i>
-                    <h3 class="service-title">
-                        <span data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</span>
-                    </h3>
-                    <p class="service-description">
-                        <span data-en="Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture." data-ar="تشفير مقاوم للكم من الجيل التالي، واستخبارات التهديدات المتقدمة، وهندسة أمنية شاملة.">
-                            Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture.
-                        </span>
-                    </p>
-                    <ul class="service-subservices">
-                        <li data-en="Quantum-resistant encryption" data-ar="تشفير مقاوم للكم">Quantum-resistant encryption</li>
-                        <li data-en="Advanced threat intelligence" data-ar="استخبارات التهديدات المتقدمة">Advanced threat intelligence</li>
-                        <li data-en="Security architecture" data-ar="هندسة أمنية">Security architecture</li>
-                        <li data-en="Critical infrastructure protection" data-ar="حماية البنية التحتية">Critical infrastructure protection</li>
-                        <li data-en="24/7 monitoring" data-ar="مراقبة على مدار الساعة">24/7 monitoring</li>
-                        <li data-en="Incident response" data-ar="الاستجابة للحوادث">Incident response</li>
-                        <li data-en="Vulnerability assessment" data-ar="تقييم الثغرات">Vulnerability assessment</li>
-                    </ul>
-                    <span class="service-badge">VISION 2030</span>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <i class="fas fa-brain service-icon"></i>
-                    <h3 class="service-title">
-                        <span data-en="Artificial Intelligence" data-ar="الذكاء الاصطناعي">Artificial Intelligence</span>
-                    </h3>
-                    <p class="service-description">
-                        <span data-en="Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation." data-ar="نماذج التعلم الآلي المتقدمة، والشبكات العصبية، وأنظمة التحليلات التنبؤية للأتمتة الذكية.">
-                            Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation.
-                        </span>
-                    </p>
-                    <ul class="service-subservices">
-                        <li data-en="Machine learning models" data-ar="نماذج التعلم الآلي">Machine learning models</li>
-                        <li data-en="Neural networks" data-ar="الشبكات العصبية">Neural networks</li>
-                        <li data-en="Predictive analytics" data-ar="التحليلات التنبؤية">Predictive analytics</li>
-                        <li data-en="Intelligent automation" data-ar="الأتمتة الذكية">Intelligent automation</li>
-                        <li data-en="Data-driven decisions" data-ar="قرارات تعتمد على البيانات">Data-driven decisions</li>
-                        <li data-en="AI integration" data-ar="دمج الذكاء الاصطناعي">AI integration</li>
-                        <li data-en="Custom AI solutions" data-ar="حلول ذكاء اصطناعي مخصصة">Custom AI solutions</li>
-                    </ul>
-                    <span class="service-badge">VISION 2030</span>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <i class="fas fa-code service-icon"></i>
-                    <h3 class="service-title">
-                        <span data-en="Full Stack Development" data-ar="التطوير الشامل">Full Stack Development</span>
-                    </h3>
-                    <p class="service-description">
-                        <span data-en="Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture." data-ar="تطبيقات سحابية قابلة للتوسع مبنية بأطر عمل حديثة مثل React و Node.js.">
-                            Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture.
-                        </span>
-                    </p>
-                    <ul class="service-subservices">
-                        <li data-en="React & Node.js" data-ar="React و Node.js">React & Node.js</li>
-                        <li data-en="Microservices" data-ar="الخدمات المصغرة">Microservices</li>
-                        <li data-en="Cloud-native apps" data-ar="تطبيقات سحابية">Cloud-native apps</li>
-                        <li data-en="Enterprise performance" data-ar="أداء مؤسسي">Enterprise performance</li>
-                        <li data-en="Scalable solutions" data-ar="حلول قابلة للتوسع">Scalable solutions</li>
-                        <li data-en="API development" data-ar="تطوير API">API development</li>
-                        <li data-en="Database optimization" data-ar="تحسين قواعد البيانات">Database optimization</li>
-                    </ul>
-                    <span class="service-badge">VISION 2030</span>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <i class="fas fa-rocket service-icon"></i>
-                    <h3 class="service-title">
-                        <span data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</span>
-                    </h3>
-                    <p class="service-description">
-                        <span data-en="Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI." data-ar="استراتيجيات تسويق مدفوعة بالبيانات، وتحسين محركات البحث، وحملات ذكية.">
-                            Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI.
-                        </span>
-                    </p>
-                    <ul class="service-subservices">
-                        <li data-en="Data-driven strategies" data-ar="استراتيجيات تعتمد على البيانات">Data-driven strategies</li>
-                        <li data-en="SEO optimization" data-ar="تحسين محركات البحث">SEO optimization</li>
-                        <li data-en="AI-powered campaigns" data-ar="حملات مدعومة بالذكاء الاصطناعي">AI-powered campaigns</li>
-                        <li data-en="Maximize ROI" data-ar="تعظيم العائد على الاستثمار">Maximize ROI</li>
-                        <li data-en="Business growth" data-ar="نمو الأعمال">Business growth</li>
-                        <li data-en="Social media ads" data-ar="إعلانات وسائل التواصل">Social media ads</li>
-                        <li data-en="Content creation" data-ar="إنشاء المحتوى">Content creation</li>
-                    </ul>
-                    <span class="service-badge">VISION 2030</span>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <i class="fas fa-film service-icon"></i>
-                    <h3 class="service-title">
-                        <span data-en="Media Production" data-ar="الإنتاج الإعلامي">Media Production</span>
-                    </h3>
-                    <p class="service-description">
-                        <span data-en="Professional content creation, cinematic production, motion graphics, and immersive media experiences." data-ar="إنشاء محتوى احترافي، وإنتاج سينمائي، ورسوم متحركة.">
-                            Professional content creation, cinematic production, motion graphics, and immersive media experiences.
-                        </span>
-                    </p>
-                    <ul class="service-subservices">
-                        <li data-en="Cinematic production" data-ar="إنتاج سينمائي">Cinematic production</li>
-                        <li data-en="Motion graphics" data-ar="رسوم متحركة">Motion graphics</li>
-                        <li data-en="Video editing" data-ar="مونتاج فيديو">Video editing</li>
-                        <li data-en="VR experiences" data-ar="تجارب الواقع الافتراضي">VR experiences</li>
-                        <li data-en="Cutting-edge tech" data-ar="تقنيات متطورة">Cutting-edge tech</li>
-                        <li data-en="Content creation" data-ar="إنشاء المحتوى">Content creation</li>
-                        <li data-en="Immersive media" data-ar="وسائط غامرة">Immersive media</li>
-                    </ul>
-                    <span class="service-badge">VISION 2030</span>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <i class="fas fa-graduation-cap service-icon"></i>
-                    <h3 class="service-title">
-                        <span data-en="Technology Education" data-ar="التعليم التقني">Technology Education</span>
-                    </h3>
-                    <p class="service-description">
-                        <span data-en="Interactive learning platforms, professional certifications, and comprehensive training programs." data-ar="منصات تعليمية تفاعلية، وشهادات مهنية، وبرامج تدريبية شاملة.">
-                            Interactive learning platforms, professional certifications, and comprehensive training programs.
-                        </span>
-                    </p>
-                    <ul class="service-subservices">
-                        <li data-en="Interactive platforms" data-ar="منصات تفاعلية">Interactive platforms</li>
-                        <li data-en="Professional certifications" data-ar="شهادات مهنية">Professional certifications</li>
-                        <li data-en="Training programs" data-ar="برامج تدريبية">Training programs</li>
-                        <li data-en="Cybersecurity education" data-ar="تعليم الأمن السيبراني">Cybersecurity education</li>
-                        <li data-en="AI training" data-ar="تدريب الذكاء الاصطناعي">AI training</li>
-                        <li data-en="Emerging tech courses" data-ar="دورات التقنيات الناشئة">Emerging tech courses</li>
-                        <li data-en="Online learning" data-ar="التعلم عبر الإنترنت">Online learning</li>
-                    </ul>
-                    <span class="service-badge">VISION 2030</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>
-                        <span data-en="About HexMind Solutions" data-ar="عن هيكس مايند سوليوشنز">About HexMind Solutions</span>
-                    </h2>
-                    <p>
-                        <span data-en="We are a leading technology company specializing in digital transformation, cybersecurity, and artificial intelligence. Our mission is to empower businesses and organizations with cutting-edge solutions that drive innovation and growth." data-ar="نحن شركة تقنية رائدة متخصصة في التحول الرقمي والأمن السيبراني والذكاء الاصطناعي. مهمتنا هي تمكين الشركات والمؤسسات بحلول متطورة تدفع الابتكار والنمو.">
-                            We are a leading technology company specializing in digital transformation, cybersecurity, and artificial intelligence. Our mission is to empower businesses and organizations with cutting-edge solutions that drive innovation and growth.
-                        </span>
-                    </p>
-                    <p>
-                        <span data-en="As a Vision 2030 strategic partner, we are committed to supporting Saudi Arabia's digital transformation journey through world-class technology solutions and services." data-ar="كشريك استراتيجي لرؤية 2030، نحن ملتزمون بدعم رحلة التحول الرقمي للمملكة العربية السعودية من خلال حلول وخدمات تقنية عالمية المستوى.">
-                            As a Vision 2030 strategic partner, we are committed to supporting Saudi Arabia's digital transformation journey through world-class technology solutions and services.
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="section" id="team">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="OUR FOUNDERS" data-ar="المؤسسون">OUR FOUNDERS</span>
-                <h2 class="section-title">
-                    <span data-en="MEET THE TEAM" data-ar="تعرف على الفريق">MEET THE TEAM</span>
-                </h2>
-                <p class="section-description">
-                    <span data-en="The visionary minds behind HexMind Solutions, driving innovation and excellence." data-ar="العقول الرؤيوية وراء هيكس مايند سوليوشنز، تقود الابتكار والتميز.">
-                        The visionary minds behind HexMind Solutions, driving innovation and excellence.
-                    </span>
-                </p>
-            </div>
-
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-avatar">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="team-name">Ahmed Al-Rashid</h3>
-                    <p class="team-role">Co-Founder & CEO</p>
-                    <p class="team-bio" data-en="Cybersecurity expert and AI specialist with 10+ years of experience in digital transformation. Leading HexMind's strategic vision aligned with Saudi Vision 2030 to build secure, intelligent systems for the future." data-ar="خبير في الأمن السيبراني والذكاء الاصطناعي مع أكثر من 10 سنوات من الخبرة في التحول الرقمي. يقود الرؤية الاستراتيجية لهيكس مايند سوليوشنز بما يتماشى مع رؤية السعودية 2030 لبناء أنظمة آمنة وذكية للمستقبل.">
-                        Cybersecurity expert and AI specialist with 10+ years of experience in digital transformation. Leading HexMind's strategic vision aligned with Saudi Vision 2030 to build secure, intelligent systems for the future.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="team-avatar">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="team-name">Mohammed Al-Fahad</h3>
-                    <p class="team-role">Co-Founder & CTO</p>
-                    <p class="team-bio" data-en="Full-stack developer and technology innovator specializing in scalable web applications. Expert in React, Node.js, and modern frameworks, committed to delivering world-class digital solutions." data-ar="مطور متكامل ومبتكر تقني متخصص في تطبيقات الويب القابلة للتوسع. خبير في React و Node.js والأطر الحديثة، ملتزم بتقديم حلول رقمية عالمية المستوى.">
-                        Full-stack developer and technology innovator specializing in scalable web applications. Expert in React, Node.js, and modern frameworks, committed to delivering world-class digital solutions.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="section" id="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="OUR WORK" data-ar="أعمالنا">OUR WORK</span>
-                <h2 class="section-title">
-                    <span data-en="COMPLETED PROJECTS" data-ar="المشروعات المنجزة">COMPLETED PROJECTS</span>
-                </h2>
-                <p class="section-description">
-                    <span data-en="Showcasing our successful projects and innovative solutions delivered to clients worldwide." data-ar="عرض مشاريعنا الناجحة والحلول المبتكرة المقدمة للعملاء في جميع أنحاء العالم.">
-                        Showcasing our successful projects and innovative solutions delivered to clients worldwide.
-                    </span>
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-building service-icon"></i>
-                    <h3 class="service-title">Enterprise Security Platform</h3>
-                    <p class="service-description" data-en="Comprehensive cybersecurity solution for a major financial institution including penetration testing, security audits, and 24/7 threat monitoring with AI-powered detection." data-ar="حل أمن سيبراني شامل لمؤسسة مالية كبرى يشمل اختبار الاختراق والتدقيق الأمني ومراقبة التهديدات على مدار الساعة مع كشف مدعوم بالذكاء الاصطناعي.">
-                        Comprehensive cybersecurity solution for a major financial institution including penetration testing, security audits, and 24/7 threat monitoring with AI-powered detection.
-                    </p>
-                    <div class="portfolio-tags">
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">Cybersecurity</span>
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">AI</span>
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">Network Security</span>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <i class="fas fa-brain service-icon"></i>
-                    <h3 class="service-title">AI-Powered Analytics System</h3>
-                    <p class="service-description" data-en="Machine learning platform for predictive analytics and business intelligence, processing millions of data points daily with real-time insights and automated reporting." data-ar="منصة تعلم آلي للتحليلات التنبؤية وذكاء الأعمال، تعالج ملايين نقاط البيانات يومياً مع رؤى فورية وتقارير آلية.">
-                        Machine learning platform for predictive analytics and business intelligence, processing millions of data points daily with real-time insights and automated reporting.
-                    </p>
-                    <div class="portfolio-tags">
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">Machine Learning</span>
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">Python</span>
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">Data Science</span>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <i class="fas fa-shopping-cart service-icon"></i>
-                    <h3 class="service-title">E-Commerce Platform</h3>
-                    <p class="service-description" data-en="Full-stack e-commerce solution with real-time inventory management, payment gateway integration, and mobile apps for iOS and Android reaching 100K+ users." data-ar="حل تجارة إلكترونية متكامل مع إدارة المخزون في الوقت الفعلي، ودمج بوابات الدفع، وتطبيقات جوال لنظامي iOS و Android تصل إلى أكثر من 100 ألف مستخدم.">
-                        Full-stack e-commerce solution with real-time inventory management, payment gateway integration, and mobile apps for iOS and Android reaching 100K+ users.
-                    </p>
-                    <div class="portfolio-tags">
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">React</span>
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">Node.js</span>
-                        <span class="service-badge" style="border-color: var(--primary-cyan);">Mobile</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-header">
-                    <h2 class="contact-title">
-                        <span data-en="GET IN TOUCH" data-ar="تواصل معنا">GET IN TOUCH</span>
-                    </h2>
-                    <p class="contact-subtitle">
-                        <span data-en="Start your digital transformation journey with HexMind Solutions" data-ar="ابدأ رحلة التحول الرقمي مع هيكس مايند سوليوشنز">Start your digital transformation journey with HexMind Solutions</span>
-                    </p>
-                </div>
-
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder=" " required>
-                            <label class="form-label">
-                                <span data-en="Full Name" data-ar="الاسم الكامل">Full Name</span>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder=" " required>
-                            <label class="form-label">
-                                <span data-en="Company Name" data-ar="اسم الشركة">Company Name</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="email" class="form-input" placeholder=" " required>
-                            <label class="form-label">
-                                <span data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</span>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-input" placeholder=" " required>
-                            <label class="form-label">
-                                <span data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <textarea class="form-textarea" placeholder=" " required></textarea>
-                        <label class="form-label">
-                            <span data-en="Project Details" data-ar="تفاصيل المشروع">Project Details</span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="form-submit">
-                        <span data-en="SEND MESSAGE" data-ar="إرسال الرسالة">SEND MESSAGE</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-logo">
-            <span data-en="HEXMIND SOLUTIONS" data-ar="هيكس مايند سوليوشنز">HEXMIND SOLUTIONS</span>
-        </div>
-        
-        <p class="footer-description">
-            <span data-en="Empowering your business with next-gen technology solutions tailored for the future." data-ar="تمكين عملك بحلول تقنية من الجيل القادم مصممة للمستقبل.">
-                Empowering your business with next-gen technology solutions tailored for the future.
-            </span>
-        </p>
-
-        <div class="footer-status">
-            <span class="status-dot"></span>
-            <span data-en="ALL SYSTEMS OPERATIONAL" data-ar="جميع الأنظمة تعمل">ALL SYSTEMS OPERATIONAL</span>
+    <!-- SERVICES (data attributes for translation) -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label" data-en="OUR CAPABILITIES" data-ar="قدراتنا">OUR CAPABILITIES</span>
+            <h2 class="section-title">
+                <span data-en="ENTERPRISE SOLUTIONS" data-ar="حلول المؤسسات">ENTERPRISE SOLUTIONS</span>
+            </h2>
+            <p class="section-description">
+                <span data-en="Cutting-edge technology solutions designed to drive digital transformation and business growth." data-ar="حلول تقنية متطورة مصممة لدفع التحول الرقمي ونمو الأعمال.">
+                    Cutting-edge technology solutions designed to drive digital transformation and business growth.
+                </span>
+            </p>
         </div>
 
-        <div class="footer-services-grid">
-            <a href="#services" class="service-card">
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
                 <i class="fas fa-shield-halved service-icon"></i>
                 <h3 class="service-title">
                     <span data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</span>
                 </h3>
                 <p class="service-description">
-                    <span data-en="Protect your digital assets with our quantum-resistant encryption." data-ar="احمي أصولك الرقمية بتشفيرنا المقاوم للكم.">
-                        Protect your digital assets with our quantum-resistant encryption.
+                    <span data-en="Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture." data-ar="تشفير مقاوم للكم من الجيل التالي، واستخبارات التهديدات المتقدمة، وهندسة أمنية شاملة.">
+                        Next-generation quantum-resistant encryption, advanced threat intelligence, and comprehensive security architecture.
                     </span>
                 </p>
-                <span class="service-badge">SECURE</span>
-            </a>
+                <ul class="service-subservices">
+                    <li data-en="Quantum-resistant encryption" data-ar="تشفير مقاوم للكم">Quantum-resistant encryption</li>
+                    <li data-en="Advanced threat intelligence" data-ar="استخبارات التهديدات المتقدمة">Advanced threat intelligence</li>
+                    <li data-en="Security architecture" data-ar="هندسة أمنية">Security architecture</li>
+                    <li data-en="Critical infrastructure protection" data-ar="حماية البنية التحتية">Critical infrastructure protection</li>
+                    <li data-en="24/7 monitoring" data-ar="مراقبة على مدار الساعة">24/7 monitoring</li>
+                    <li data-en="Incident response" data-ar="الاستجابة للحوادث">Incident response</li>
+                    <li data-en="Vulnerability assessment" data-ar="تقييم الثغرات">Vulnerability assessment</li>
+                </ul>
+            </div>
 
-            <a href="#services" class="service-card">
+            <!-- Service 2 -->
+            <div class="service-card">
                 <i class="fas fa-brain service-icon"></i>
                 <h3 class="service-title">
                     <span data-en="Artificial Intelligence" data-ar="الذكاء الاصطناعي">Artificial Intelligence</span>
                 </h3>
                 <p class="service-description">
-                    <span data-en="Leverage AI for data-driven decisions and growth." data-ar="استغل الذكاء الاصطناعي لاتخاذ قرارات تعتمد على البيانات والنمو.">
-                        Leverage AI for data-driven decisions and growth.
+                    <span data-en="Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation." data-ar="نماذج التعلم الآلي المتقدمة، والشبكات العصبية، وأنظمة التحليلات التنبؤية للأتمتة الذكية.">
+                        Advanced machine learning models, neural networks, and predictive analytics systems for intelligent automation.
                     </span>
                 </p>
-                <span class="service-badge">SMART</span>
-            </a>
+                <ul class="service-subservices">
+                    <li data-en="Machine learning models" data-ar="نماذج التعلم الآلي">Machine learning models</li>
+                    <li data-en="Neural networks" data-ar="الشبكات العصبية">Neural networks</li>
+                    <li data-en="Predictive analytics" data-ar="التحليلات التنبؤية">Predictive analytics</li>
+                    <li data-en="Intelligent automation" data-ar="الأتمتة الذكية">Intelligent automation</li>
+                    <li data-en="Data-driven decisions" data-ar="قرارات تعتمد على البيانات">Data-driven decisions</li>
+                    <li data-en="AI integration" data-ar="دمج الذكاء الاصطناعي">AI integration</li>
+                    <li data-en="Custom AI solutions" data-ar="حلول ذكاء اصطناعي مخصصة">Custom AI solutions</li>
+                </ul>
+            </div>
 
-            <a href="#services" class="service-card">
+            <!-- Service 3 -->
+            <div class="service-card">
                 <i class="fas fa-code service-icon"></i>
                 <h3 class="service-title">
-                    <span data-en="Web Development" data-ar="تطوير الويب">Web Development</span>
+                    <span data-en="Full Stack Development" data-ar="التطوير الشامل">Full Stack Development</span>
                 </h3>
                 <p class="service-description">
-                    <span data-en="Building scalable web applications with modern frameworks." data-ar="بناء تطبيقات ويب قابلة للتوسع باستخدام أطر عمل حديثة.">
-                        Building scalable web applications with modern frameworks.
+                    <span data-en="Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture." data-ar="تطبيقات سحابية قابلة للتوسع مبنية بأطر عمل حديثة مثل React و Node.js.">
+                        Scalable cloud-native applications built with modern frameworks including React, Node.js, and microservices architecture.
                     </span>
                 </p>
-                <span class="service-badge">CODE</span>
-            </a>
-        </div>
+                <ul class="service-subservices">
+                    <li data-en="React & Node.js" data-ar="React و Node.js">React & Node.js</li>
+                    <li data-en="Microservices" data-ar="الخدمات المصغرة">Microservices</li>
+                    <li data-en="Cloud-native apps" data-ar="تطبيقات سحابية">Cloud-native apps</li>
+                    <li data-en="Enterprise performance" data-ar="أداء مؤسسي">Enterprise performance</li>
+                    <li data-en="Scalable solutions" data-ar="حلول قابلة للتوسع">Scalable solutions</li>
+                    <li data-en="API development" data-ar="تطوير API">API development</li>
+                    <li data-en="Database optimization" data-ar="تحسين قواعد البيانات">Database optimization</li>
+                </ul>
+            </div>
 
-        <p class="footer-text">
-            <span data-en="© 2024 HexMind Solutions. Vision 2030 Strategic Partner. All Rights Reserved." data-ar="© 2024 هيكس مايند سوليوشنز. شريك استراتيجي رؤية 2030. جميع الحقوق محفوظة.">
-                © 2024 HexMind Solutions. Vision 2030 Strategic Partner. All Rights Reserved.
-            </span>
-        </p>
+            <!-- Service 4 -->
+            <div class="service-card">
+                <i class="fas fa-rocket service-icon"></i>
+                <h3 class="service-title">
+                    <span data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</span>
+                </h3>
+                <p class="service-description">
+                    <span data-en="Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI." data-ar="استراتيجيات تسويق مدفوعة بالبيانات، وتحسين محركات البحث، وحملات ذكية.">
+                        Data-driven marketing strategies, SEO optimization, and AI-powered campaigns designed to maximize ROI.
+                    </span>
+                </p>
+                <ul class="service-subservices">
+                    <li data-en="Data-driven strategies" data-ar="استراتيجيات تعتمد على البيانات">Data-driven strategies</li>
+                    <li data-en="SEO optimization" data-ar="تحسين محركات البحث">SEO optimization</li>
+                    <li data-en="AI-powered campaigns" data-ar="حملات مدعومة بالذكاء الاصطناعي">AI-powered campaigns</li>
+                    <li data-en="Maximize ROI" data-ar="تعظيم العائد على الاستثمار">Maximize ROI</li>
+                    <li data-en="Business growth" data-ar="نمو الأعمال">Business growth</li>
+                    <li data-en="Social media ads" data-ar="إعلانات وسائل التواصل">Social media ads</li>
+                    <li data-en="Content creation" data-ar="إنشاء المحتوى">Content creation</li>
+                </ul>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card">
+                <i class="fas fa-film service-icon"></i>
+                <h3 class="service-title">
+                    <span data-en="Media Production" data-ar="الإنتاج الإعلامي">Media Production</span>
+                </h3>
+                <p class="service-description">
+                    <span data-en="Professional content creation, cinematic production, motion graphics, and immersive media experiences." data-ar="إنشاء محتوى احترافي، وإنتاج سينمائي، ورسوم متحركة.">
+                        Professional content creation, cinematic production, motion graphics, and immersive media experiences.
+                    </span>
+                </p>
+                <ul class="service-subservices">
+                    <li data-en="Cinematic production" data-ar="إنتاج سينمائي">Cinematic production</li>
+                    <li data-en="Motion graphics" data-ar="رسوم متحركة">Motion graphics</li>
+                    <li data-en="Video editing" data-ar="مونتاج فيديو">Video editing</li>
+                    <li data-en="VR experiences" data-ar="تجارب الواقع الافتراضي">VR experiences</li>
+                    <li data-en="Cutting-edge tech" data-ar="تقنيات متطورة">Cutting-edge tech</li>
+                    <li data-en="Content creation" data-ar="إنشاء المحتوى">Content creation</li>
+                    <li data-en="Immersive media" data-ar="وسائط غامرة">Immersive media</li>
+                </ul>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card">
+                <i class="fas fa-graduation-cap service-icon"></i>
+                <h3 class="service-title">
+                    <span data-en="Technology Education" data-ar="التعليم التقني">Technology Education</span>
+                </h3>
+                <p class="service-description">
+                    <span data-en="Interactive learning platforms, professional certifications, and comprehensive training programs." data-ar="منصات تعليمية تفاعلية، وشهادات مهنية، وبرامج تدريبية شاملة.">
+                        Interactive learning platforms, professional certifications, and comprehensive training programs.
+                    </span>
+                </p>
+                <ul class="service-subservices">
+                    <li data-en="Interactive platforms" data-ar="منصات تفاعلية">Interactive platforms</li>
+                    <li data-en="Professional certifications" data-ar="شهادات مهنية">Professional certifications</li>
+                    <li data-en="Training programs" data-ar="برامج تدريبية">Training programs</li>
+                    <li data-en="Cybersecurity education" data-ar="تعليم الأمن السيبراني">Cybersecurity education</li>
+                    <li data-en="AI training" data-ar="تدريب الذكاء الاصطناعي">AI training</li>
+                    <li data-en="Emerging tech courses" data-ar="دورات التقنيات الناشئة">Emerging tech courses</li>
+                    <li data-en="Online learning" data-ar="التعلم عبر الإنترنت">Online learning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ABOUT -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 data-en="About HexMind Solutions" data-ar="عن هيكس مايند سوليوشنز">About HexMind Solutions</h2>
+                <p data-en="A technology company focused on digital transformation, cybersecurity, and artificial intelligence. We work with businesses to build, secure, and scale their digital capabilities." data-ar="شركة تقنية تركز على التحول الرقمي والأمن السيبراني والذكاء الاصطناعي. نعمل مع الشركات لبناء وتأمين وتوسيع قدراتها الرقمية.">
+                    A technology company focused on digital transformation, cybersecurity, and artificial intelligence. We work with businesses to build, secure, and scale their digital capabilities.
+                </p>
+                <p data-en="Our approach combines technical expertise with practical execution — delivering solutions that are secure, scalable, and built to last." data-ar="يجمع نهجنا بين الخبرة التقنية والتنفيذ العملي — لنقدم حلولاً آمنة وقابلة للتطوير ومصممة للاستمرار.">
+                    Our approach combines technical expertise with practical execution — delivering solutions that are secure, scalable, and built to last.
+                </p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-en="100+" data-ar="١٠٠+">100+</div>
+                    <div class="stat-label" data-en="Projects Delivered" data-ar="مشروع تم تسليمه">Projects Delivered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-en="98%" data-ar="٩٨٪">98%</div>
+                    <div class="stat-label" data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-en="25+" data-ar="٢٥+">25+</div>
+                    <div class="stat-label" data-en="Team Members" data-ar="عضو فريق">Team Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-en="24/7" data-ar="٢٤/٧">24/7</div>
+                    <div class="stat-label" data-en="Ongoing Support" data-ar="دعم مستمر">Ongoing Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- TEAM - REDESIGNED, NO SOCIAL, ELEGANT -->
+    <section class="section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-en="OUR FOUNDERS" data-ar="المؤسسون">OUR FOUNDERS</span>
+                <h2 class="section-title" data-en="MEET THE TEAM" data-ar="تعرف على الفريق">MEET THE TEAM</h2>
+                <p class="section-description" data-en="The visionary minds behind HexMind Solutions, driving innovation and excellence." data-ar="العقول المبدعة وراء هيكس مايند سوليوشنز، تقود الابتكار والتميز.">The visionary minds behind HexMind Solutions, driving innovation and excellence.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Al-Rashid"></div>
+                    <h3 class="team-name" data-en="Ahmed Al-Rashid" data-ar="أحمد الرشيد">Ahmed Al-Rashid</h3>
+                    <p class="team-role" data-en="Co-Founder & CEO" data-ar="مؤسس مشارك والرئيس التنفيذي">Co-Founder & CEO</p>
+                    <p class="team-bio" data-en="Cybersecurity expert and AI specialist with 10+ years of experience in digital transformation. Leading HexMind's strategic vision to build secure, intelligent systems." data-ar="خبير في الأمن السيبراني والذكاء الاصطناعي مع أكثر من 10 سنوات خبرة في التحول الرقمي. يقود الرؤية الاستراتيجية لهيكس مايند لبناء أنظمة آمنة وذكية.">Cybersecurity expert and AI specialist with 10+ years of experience in digital transformation. Leading HexMind's strategic vision to build secure, intelligent systems.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Mohammed Al-Fahad"></div>
+                    <h3 class="team-name" data-en="Mohammed Al-Fahad" data-ar="محمد الفهد">Mohammed Al-Fahad</h3>
+                    <p class="team-role" data-en="Co-Founder & CTO" data-ar="مؤسس مشارك وكبير مسؤولي التقنية">Co-Founder & CTO</p>
+                    <p class="team-bio" data-en="Full-stack developer and technology innovator specializing in scalable web applications. Expert in React, Node.js, and modern frameworks." data-ar="مطور شامل ومبتكر تقني متخصص في تطبيقات الويب القابلة للتوسع. خبير في React و Node.js والأطر الحديثة.">Full-stack developer and technology innovator specializing in scalable web applications. Expert in React, Node.js, and modern frameworks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO - VISUAL SLIDER, MINIMAL TEXT -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-en="OUR WORKS" data-ar="أعمالنا">OUR WORKS</span>
+                <h2 class="section-title" data-en="FEATURED PROJECTS" data-ar="مشاريع مميزة">FEATURED PROJECTS</h2>
+                <p class="section-description" data-en="Click on any project to see full details." data-ar="اضغط على أي مشروع لمشاهدة التفاصيل كاملة.">Click on any project to see full details.</p>
+            </div>
+            <div class="portfolio-slider">
+                <div class="portfolio-track" id="portfolioTrack"></div>
+                <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT MODAL -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modalCloseBtn"><i class="fas fa-times"></i></button>
+            <div id="modalDynamicContent"></div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-header">
+                    <h2 class="contact-title" data-en="GET IN TOUCH" data-ar="تواصل معنا">GET IN TOUCH</h2>
+                    <p class="contact-subtitle" data-en="Start your digital transformation journey with HexMind Solutions" data-ar="ابدأ رحلة التحول الرقمي مع هيكس مايند سوليوشنز">Start your digital transformation journey with HexMind Solutions</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group"><input type="text" class="form-input" placeholder=" " required><label class="form-label" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label></div>
+                        <div class="form-group"><input type="text" class="form-input" placeholder=" " required><label class="form-label" data-en="Company Name" data-ar="اسم الشركة">Company Name</label></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><input type="email" class="form-input" placeholder=" " required><label class="form-label" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label></div>
+                        <div class="form-group"><input type="tel" class="form-input" placeholder=" " required><label class="form-label" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label></div>
+                    </div>
+                    <div class="form-group"><textarea class="form-textarea" placeholder=" " required></textarea><label class="form-label" data-en="Project Details" data-ar="تفاصيل المشروع">Project Details</label></div>
+                    <button type="submit" class="form-submit" data-en="SEND MESSAGE" data-ar="إرسال الرسالة">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo" data-en="HEXMIND SOLUTIONS" data-ar="هيكس مايند سوليوشنز">HEXMIND SOLUTIONS</div>
+        <div class="footer-status"><span class="status-dot"></span> <span data-en="ALL SYSTEMS OPERATIONAL" data-ar="جميع الأنظمة تعمل">ALL SYSTEMS OPERATIONAL</span></div>
+        <div class="social-media">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="footer-text" data-en="© 2024 HexMind Solutions. All Rights Reserved." data-ar="© 2024 هيكس مايند سوليوشنز. جميع الحقوق محفوظة.">© 2024 HexMind Solutions. All Rights Reserved.</p>
     </footer>
 
-    <!-- Modal -->
+    <!-- CONTACT MODAL -->
     <div class="modal-overlay" id="modalOverlay"></div>
     <div class="modal" id="modal">
-        <div class="modal-icon">
-            <i class="fas fa-check-circle"></i>
-        </div>
-        <h3 class="modal-title">
-            <span data-en="MESSAGE SENT" data-ar="تم الإرسال">MESSAGE SENT</span>
-        </h3>
-        <p class="modal-text">
-            <span data-en="Thank you for contacting HexMind Solutions. Our team will review your message and respond within 24 hours." data-ar="شكراً لتواصلك مع هيكس مايند سوليوشنز. سيقوم فريقنا بمراجعة رسالتك والرد في غضون 24 ساعة.">
-                Thank you for contacting HexMind Solutions. Our team will review your message and respond within 24 hours.
-            </span>
-        </p>
-        <button class="modal-close" id="modalClose">
-            <span data-en="CLOSE" data-ar="إغلاق">CLOSE</span>
-        </button>
+        <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+        <h3 class="modal-title" data-en="MESSAGE SENT" data-ar="تم الإرسال">MESSAGE SENT</h3>
+        <p class="modal-text" data-en="Thank you for contacting HexMind Solutions. Our team will review your message and respond within 24 hours." data-ar="شكراً لتواصلك مع هيكس مايند سوليوشنز. سيقوم فريقنا بمراجعة رسالتك والرد في غضون 24 ساعة.">Thank you for contacting HexMind Solutions. Our team will review your message and respond within 24 hours.</p>
+        <button class="modal-close" id="modalClose" data-en="CLOSE" data-ar="إغلاق">CLOSE</button>
     </div>
 
     <script>
-        'use strict';
+        // ============================================
+        // FULLY FUNCTIONAL TRANSLATION, TEAM REDESIGN, PORTFOLIO VISUAL
+        // ============================================
+        (function() {
+            'use strict';
 
-        const CONFIG = {
-            PRELOADER_DURATION: 2000,
-            SCROLL_THRESHOLD: 50,
-            CURSOR_SPEED: 0.15
-        };
-
-        const state = {
-            isRTL: false,
-            lang: 'en',
-            mouseX: 0,
-            mouseY: 0,
-            cursorX: 0,
-            cursorY: 0
-        };
-
-        const DOM = {
-            preloader: document.getElementById('preloader'),
-            header: document.getElementById('header'),
-            nav: document.getElementById('nav'),
-            mobileToggle: document.getElementById('mobileToggle'),
-            mobileNavClose: document.getElementById('mobileNavClose'),
-            langBtn: document.getElementById('langBtn'),
-            scrollIndicator: document.getElementById('scrollIndicator'),
-            contactForm: document.getElementById('contactForm'),
-            modal: document.getElementById('modal'),
-            modalOverlay: document.getElementById('modalOverlay'),
-            modalClose: document.getElementById('modalClose'),
-            cursorDot: document.querySelector('.cursor-dot'),
-            cursorRing: document.querySelector('.cursor-ring'),
-            navLinks: document.querySelectorAll('.nav-link'),
-            sideNavLinks: document.querySelectorAll('.side-nav-link'),
-            serviceCards: document.querySelectorAll('.service-card')
-        };
-
-        // Preloader
-        function initPreloader() {
+            // ---------- Preloader ----------
             let progress = 0;
-            const progressEl = document.querySelector('.loader-progress');
-            
+            const progEl = document.querySelector('.loader-progress');
+            const preloader = document.getElementById('preloader');
             const interval = setInterval(() => {
                 progress += Math.random() * 20;
                 if (progress > 100) progress = 100;
-                
-                if (progressEl) {
-                    progressEl.textContent = Math.floor(progress) + '%';
-                }
-                
+                if (progEl) progEl.textContent = Math.floor(progress) + '%';
                 if (progress >= 100) {
                     clearInterval(interval);
-                    setTimeout(() => {
-                        DOM.preloader.classList.add('fade-out');
-                    }, 300);
+                    setTimeout(() => preloader.classList.add('fade-out'), 300);
                 }
             }, 80);
-        }
 
-        // Cursor
-        function initCursor() {
-            if (!DOM.cursorDot || !DOM.cursorRing) return;
-            
-            document.addEventListener('mousemove', (e) => {
-                state.mouseX = e.clientX;
-                state.mouseY = e.clientY;
-                
-                DOM.cursorDot.style.left = state.mouseX + 'px';
-                DOM.cursorDot.style.top = state.mouseY + 'px';
+
+
+            // ---------- Mobile menu ----------
+            const mobileToggle = document.getElementById('mobileToggle');
+            const nav = document.getElementById('nav');
+            const mobileClose = document.getElementById('mobileClose');
+            if (mobileToggle) mobileToggle.addEventListener('click', () => nav.classList.add('active'));
+            if (mobileClose) mobileClose.addEventListener('click', () => nav.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => nav.classList.remove('active'));
             });
 
-            function animate() {
-                const distX = state.mouseX - state.cursorX;
-                const distY = state.mouseY - state.cursorY;
-                
-                state.cursorX += distX * CONFIG.CURSOR_SPEED;
-                state.cursorY += distY * CONFIG.CURSOR_SPEED;
-                
-                DOM.cursorRing.style.left = state.cursorX + 'px';
-                DOM.cursorRing.style.top = state.cursorY + 'px';
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
+            // ---------- LANGUAGE SWITCHER - FULLY FIXED ----------
+            const langBtn = document.getElementById('langBtn');
+            let currentLang = 'en';
 
-            const hoverElements = document.querySelectorAll('a, button, .service-card, .panel-item, input, textarea');
-            hoverElements.forEach(el => {
-                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-            });
-        }
-
-        // Three.js Background
-        function initThreeJS() {
-            const canvas = document.getElementById('three-canvas');
-            if (!canvas || !window.THREE) return;
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ 
-                canvas: canvas,
-                alpha: true, 
-                antialias: true 
-            });
-            
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-            const material = new THREE.PointsMaterial({
-                size: 0.15,
-                color: 0x00f3ff,
-                transparent: true,
-                opacity: 0.8,
-                blending: THREE.AdditiveBlending
-            });
-            
-            const particles = new THREE.Points(geometry, material);
-            scene.add(particles);
-
-            const wireGeo = new THREE.TorusKnotGeometry(10.2, 3.2, 64, 8);
-            const wireMat = new THREE.MeshBasicMaterial({ 
-                color: 0xa855f7, 
-                wireframe: true, 
-                transparent: true, 
-                opacity: 0.05 
-            });
-            const wire = new THREE.Mesh(wireGeo, wireMat);
-            scene.add(wire);
-
-            camera.position.z = 30;
-
-            let targetX = 0;
-            let targetY = 0;
-
-            document.addEventListener('mousemove', (e) => {
-                targetX = (e.clientX - window.innerWidth / 2) * 0.0005;
-                targetY = (e.clientY - window.innerHeight / 2) * 0.0005;
-            });
-
-            function animate() {
-                requestAnimationFrame(animate);
-                
-                particles.rotation.y += 0.03 * (targetX - particles.rotation.y);
-                particles.rotation.x += 0.03 * (targetY - particles.rotation.x);
-                particles.rotation.z += 0.001;
-                
-                wire.rotation.y += 0.03 * (targetX - wire.rotation.y);
-                wire.rotation.x += 0.03 * (targetY - wire.rotation.x);
-                wire.rotation.z -= 0.0005;
-                
-                const time = Date.now() * 0.0005;
-                particles.scale.setScalar(1 + Math.sin(time) * 0.03);
-                
-                renderer.render(scene, camera);
-            }
-            
-            animate();
-
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        }
-
-        // Header Scroll
-        function initHeaderScroll() {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > CONFIG.SCROLL_THRESHOLD) {
-                    DOM.header.classList.add('scrolled');
-                } else {
-                    DOM.header.classList.remove('scrolled');
-                }
-
-                if (window.scrollY > 300 && DOM.scrollIndicator) {
-                    DOM.scrollIndicator.classList.add('hidden');
-                } else if (DOM.scrollIndicator) {
-                    DOM.scrollIndicator.classList.remove('hidden');
-                }
-            });
-        }
-
-        // Mobile Menu
-        function initMobileMenu() {
-            const closeMenu = () => DOM.nav.classList.remove('active');
-
-            DOM.mobileToggle.addEventListener('click', () => {
-                DOM.nav.classList.add('active');
-            });
-
-            DOM.mobileNavClose.addEventListener('click', closeMenu);
-
-            DOM.navLinks.forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
-            
-            document.addEventListener('click', (e) => {
-                if (!DOM.nav.contains(e.target) && !DOM.mobileToggle.contains(e.target) && DOM.nav.classList.contains('active')) {
-                    closeMenu();
-                }
-            });
-        }
-
-        // Language Switcher
-        function initLanguage() {
-            DOM.langBtn.addEventListener('click', () => {
-                state.isRTL = !state.isRTL;
-                state.lang = state.isRTL ? 'ar' : 'en';
-                
-                document.body.classList.toggle('rtl');
-                
-                DOM.langBtn.textContent = state.isRTL ? 'EN' : 'AR';
-                
+            function translateAll() {
+                const isAr = currentLang === 'ar';
+                // all elements with data-en and data-ar
                 document.querySelectorAll('[data-en]').forEach(el => {
-                    const text = state.isRTL ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-                    if (text) {
-                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                            el.placeholder = text;
+                    const key = isAr ? 'data-ar' : 'data-en';
+                    const translation = el.getAttribute(key);
+                    if (translation) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'BUTTON') {
+                            // for inputs/buttons, value or textContent? We use textContent for buttons, label is separate.
+                            if (el.classList.contains('form-submit') || el.classList.contains('lang-btn') || el.classList.contains('modal-close')) {
+                                el.textContent = translation;
+                            }
                         } else {
-                            el.textContent = text;
+                            el.textContent = translation;
                         }
                     }
                 });
-
-                const glitch = document.querySelector('.glitch-text');
-                if (glitch) {
-                    const text = state.isRTL ? 'هيكس مايند سوليوشنز' : 'HEXMIND SOLUTIONS';
-                    glitch.setAttribute('data-text', text);
+                // update glitch text attribute
+                const glitchSpan = document.querySelector('.glitch-text');
+                if (glitchSpan) {
+                    glitchSpan.setAttribute('data-text', isAr ? 'هيكس مايند سوليوشنز' : 'HEXMIND SOLUTIONS');
                 }
-                
-                document.querySelectorAll('.service-subservices li').forEach(li => {
-                    const text = state.isRTL ? li.getAttribute('data-ar') : li.getAttribute('data-en');
-                    if (text) {
-                        li.textContent = text;
-                    }
-                });
-            });
-        }
+                // update lang button text
+                langBtn.textContent = isAr ? 'EN' : 'AR';
+            }
 
-        // Service Cards Mouse Effect
-        function initServiceCards() {
-            DOM.serviceCards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    card.style.setProperty('--mouse-x', x + 'px');
-                    card.style.setProperty('--mouse-y', y + 'px');
-                });
+            langBtn.addEventListener('click', function() {
+                currentLang = currentLang === 'en' ? 'ar' : 'en';
+                translateAll();
             });
-        }
 
-        // Smooth Scroll
-        function initSmoothScroll() {
+            // ---------- Smooth scroll for all hash links ----------
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const target = document.querySelector(targetId);
+                    const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-
-                        DOM.navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === targetId) {
-                                link.classList.add('active');
-                            }
-                        });
-
-                        DOM.sideNavLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === targetId) {
-                                link.classList.add('active');
-                            }
-                        });
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // active class for header nav
+                        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                        const activeLink = Array.from(document.querySelectorAll('.nav-link')).find(l => l.getAttribute('href') === this.getAttribute('href'));
+                        if (activeLink) activeLink.classList.add('active');
                     }
                 });
             });
-        }
 
-        // Contact Form
-        function initContactForm() {
-            DOM.contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                DOM.modalOverlay.classList.add('active');
-                DOM.modal.classList.add('active');
-                
-                DOM.contactForm.reset();
-            });
+            // ---------- Portfolio Data (visual, minimal text) ----------
+            const projects = [
+                { title: "Project Alpha", category: "Cybersecurity", year: "2024", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&auto=format", fullDesc: "Comprehensive quantum-resistant security infrastructure with AI-based threat detection and zero-trust architecture. Reduced breach attempts by 99.8%." },
+                { title: "Project Beta", category: "AI", year: "2024", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format", fullDesc: "Custom neural network for predictive analytics, improving sales forecasting by 40%. Integrated with ERP and real-time dashboards." },
+                { title: "Project Gamma", category: "Web Dev", year: "2023", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format", fullDesc: "E-commerce platform with React, Node.js, MongoDB. Handles 100k+ daily users, 99.9% uptime, 40% faster page loads." },
+                { title: "Project Delta", category: "Marketing", year: "2023", image: "https://images.unsplash.com/photo-1526628953305-28bee58c85af?w=500&auto=format", fullDesc: "Multi-channel AI-driven campaign: 150% increase in brand awareness, 80% lead growth, 3x ROI within 6 months." },
+                { title: "Project Epsilon", category: "Media", year: "2024", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&auto=format", fullDesc: "Immersive VR training simulation for industrial safety. Deployed across 5 factories, reducing workplace accidents by 60%." }
+            ];
 
-            function closeModal() {
-                DOM.modalOverlay.classList.remove('active');
-                DOM.modal.classList.remove('active');
+            const track = document.getElementById('portfolioTrack');
+            function renderSlider() {
+                track.innerHTML = '';
+                projects.forEach((proj, index) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'portfolio-slide';
+                    slide.setAttribute('data-index', index);
+                    slide.innerHTML = `
+                        <div class="slide-image">
+                            <img src="${proj.image}" alt="${proj.title}">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <h3 class="slide-title">${proj.title}</h3>
+                                    <div class="slide-meta">${proj.category} • ${proj.year}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    slide.addEventListener('click', () => openModal(index));
+                    track.appendChild(slide);
+                });
+            }
+            renderSlider();
+
+            // Slider navigation
+            let currentSlide = 0;
+            const prevBtn = document.getElementById('prevSlide');
+            const nextBtn = document.getElementById('nextSlide');
+
+            function updateSlider() {
+                const slides = document.querySelectorAll('.portfolio-slide');
+                if (!slides.length) return;
+                const slideWidth = slides[0].offsetWidth + 30; // 30px gap
+                const containerWidth = document.querySelector('.portfolio-slider').offsetWidth;
+                let visible = Math.floor(containerWidth / slideWidth);
+                if (visible < 1) visible = 1;
+                const maxIndex = Math.max(0, slides.length - visible);
+                if (currentSlide > maxIndex) currentSlide = maxIndex;
+                track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
             }
 
-            DOM.modalClose.addEventListener('click', closeModal);
-            DOM.modalOverlay.addEventListener('click', closeModal);
-        }
+            prevBtn.addEventListener('click', () => { currentSlide--; updateSlider(); });
+            nextBtn.addEventListener('click', () => { currentSlide++; updateSlider(); });
+            window.addEventListener('resize', updateSlider);
+            setTimeout(updateSlider, 100);
 
-        // Initialize Everything
-        function init() {
-            initPreloader();
-            initCursor();
+            // Modal
+            const modal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modalDynamicContent');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+            window.openModal = function(index) {
+                const p = projects[index];
+                modalContent.innerHTML = `
+                    <h2>${p.title}</h2>
+                    <div style="display:flex; gap:20px; margin-bottom:20px;">
+                        <span style="background: var(--primary-purple); padding:0.5rem 1.5rem; border-radius:30px; font-size:0.9rem;">${p.category} • ${p.year}</span>
+                    </div>
+                    <img src="${p.image}" alt="${p.title}" style="width:100%; border-radius:16px; margin-bottom:20px;">
+                    <p class="modal-desc">${p.fullDesc}</p>
+                `;
+                modal.classList.add('active');
+            };
+
+            modalCloseBtn.addEventListener('click', () => modal.classList.remove('active'));
+            modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+            // ---------- Contact Form Modal ----------
+            const contactForm = document.getElementById('contactForm');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const contactModal = document.getElementById('modal');
+            const modalCloseContact = document.getElementById('modalClose');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                modalOverlay.classList.add('active');
+                contactModal.classList.add('active');
+                contactForm.reset();
+            });
+            modalCloseContact.addEventListener('click', () => {
+                modalOverlay.classList.remove('active');
+                contactModal.classList.remove('active');
+            });
+            modalOverlay.addEventListener('click', () => {
+                modalOverlay.classList.remove('active');
+                contactModal.classList.remove('active');
+            });
+
+            // ---------- Three.js Background (minimal) ----------
+            function initThreeJS() {
+                const canvas = document.getElementById('three-canvas');
+                if (!canvas || !window.THREE) return;
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+                const material = new THREE.PointsMaterial({ size: 0.15, color: 0x00f3ff, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending });
+                const particles = new THREE.Points(geometry, material);
+                scene.add(particles);
+                const wireGeo = new THREE.TorusKnotGeometry(10.2, 3.2, 64, 8);
+                const wireMat = new THREE.MeshBasicMaterial({ color: 0xa855f7, wireframe: true, transparent: true, opacity: 0.05 });
+                const wire = new THREE.Mesh(wireGeo, wireMat);
+                scene.add(wire);
+                camera.position.z = 30;
+                let targetX = 0, targetY = 0;
+                document.addEventListener('mousemove', (e) => {
+                    targetX = (e.clientX - window.innerWidth / 2) * 0.0005;
+                    targetY = (e.clientY - window.innerHeight / 2) * 0.0005;
+                });
+                function animate() {
+                    requestAnimationFrame(animate);
+                    particles.rotation.y += 0.03 * (targetX - particles.rotation.y);
+                    particles.rotation.x += 0.03 * (targetY - particles.rotation.x);
+                    wire.rotation.y += 0.03 * (targetX - wire.rotation.y);
+                    wire.rotation.x += 0.03 * (targetY - wire.rotation.x);
+                    renderer.render(scene, camera);
+                }
+                animate();
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
             initThreeJS();
-            initHeaderScroll();
-            initMobileMenu();
-            initLanguage();
-            initServiceCards();
-            initSmoothScroll();
-            initContactForm();
-        }
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init);
-        } else {
-            init();
-        }
+            // initial translation (ensures correct display)
+            translateAll();
+        })();
     </script>
 </body>
 </html>
